@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDentim - Rebuild Gums & Teeth</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Editorial Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            darkGreen: '#09533f',
+                            sage: '#d9ebd9',
+                            sageLight: '#f4faf6',
+                            mint: '#10b981',
+                            buttonYellow: '#ffbe00',
+                            buttonYellowHover: '#e6ab00'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Desfoca o fundo quando o popup está ativo */
+        .blur-background {
+            filter: blur(6px);
+            pointer-events: none;
+            user-select: none;
+        }
+        .text-shadow-sm {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#f3faf7] text-slate-800 font-sans antialiased relative min-h-screen">
+
+    <!-- OVERLAY POPUP DE COOKIES (Fiel ao exemplo da primeira captura) -->
+    <div id="cookiePopup" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-[4px] transition-all duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden relative border border-slate-100 flex flex-col transform scale-100 transition-transform duration-300">
+            <!-- Barra superior fina com gradiente Magenta/Rosa do print -->
+            <div class="h-1.5 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"></div>
+            
+            <div class="p-8 text-center flex flex-col items-center">
+                <h3 class="text-2xl font-bold text-slate-800 tracking-tight mb-3">Cookie Policy</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                    This site uses cookies to customize content and ads, provide social media resources and analyze our traffic. By clicking "Allow", you agree to the use of cookies. For more information, visit our Cookie Policy.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mb-4">
+                    <button class="bg-[#00a877] text-white hover:bg-[#009166] font-semibold py-3 px-8 rounded-lg transition duration-200 text-sm shadow-md shadow-emerald-100 w-full sm:w-auto min-w-[130px]">
+                        Allow
+                    </button>
+                    <button class="bg-[#f0f4f8] text-slate-600 hover:bg-[#e1e8f0] font-semibold py-3 px-8 rounded-lg transition duration-200 text-sm border border-slate-200 w-full sm:w-auto min-w-[130px]">
+                        Close
+                    </button>
+                </div>
+                <span class="text-[10px] text-slate-400">Your privacy is important to us</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO DA PÁGINA (CLONE DO PRODENTIM) -->
+    <!-- Aplicada a classe de desfoque por padrão para emular o preview bloqueado pelo popup -->
+    <div id="pageContent" class="blur-background">
+        <!doctype html>
+<html lang="en"><head>
+<style>.async-hide { opacity: 0 !important} </style>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noimageindex, nofollow, nosnippet" name="robots"/>
+<meta content="ProDentim - Text Presentation" name="description"/>
+<title>ProDentim - Text Presentation</title>
+<link href="https://prodentim101.com//statics/img/favicon.png" rel="icon" type="image/png"/>
+<meta content="NkIMIF3LrEP8eigbTeK1LsTUFM0zaVlMl-MjMldAzW0" name="google-site-verification"/>
+<style>
+    @font-face {
+  font-family: main-font;
+  src: url("https://prodentim101.com//statics/fonts/Quicksand-Regular.ttf");
+}
+
+@font-face {
+  font-family: bold-font;
+  src: url("https://prodentim101.com//statics/fonts/Quicksand-Bold.ttf");
+}
+
+@font-face {
+  font-family: light-font;
+  src: url("https://prodentim101.com//statics/fonts/Quicksand-Light.ttf");
+}
+@font-face {
+  font-family: medium-font;
+  src: url("https://prodentim101.com//statics/fonts/Quicksand-Medium.ttf");
+}
+
+@font-face {
+  font-family: semi-bold-font;
+  src: url("https://prodentim101.com//statics/fonts/Quicksand-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url("https://prodentim101.com//statics/fonts/RobotoCondensed-Bold.ttf");
+}
+
+@font-face {
+  font-family: bold-m-font;
+  src: url("https://prodentim101.com//statics/fonts/ElMessiri-SemiBold.ttf");
+}
+
+
+*{
+    --background-color:white;
+    --main-font-color:#272727;
+    --main-hover-color: #ccc;
+    --main-font-family: main-font, Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    /* font sizes */
+    --font-large: 2rem;
+    --font-medium: 1.5rem;
+    --font-normal: 1rem;
+    --font-small: 0.5rem;
+    
+    /* HDEADLINE */
+    --headline-color: var(--main-font-color);
+    
+    /* FOOTER colors*/
+    --footer-background-color: black;
+    --copywrite-background-color:darkgray;
+    --footer-font-color:#ffffff;
+    --footer-hover-color:var(--main-hover-color);
+    
+    --accent-color-light:#00a536;
+    /* PRICE BOX */
+    --color-dark:#3d56b0;
+    --color-light:#2fb3c5;
+    --references-clickable: auto;
+} 
+</style> <link href="https://prodentim101.com//statics/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://prodentim101.com//statics/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://prodentim101.com//statics/css/webfont.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+
+ <link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #0000ff;
+  --rdp-background-color: #e7edff;
+  --rdp-accent-color-dark: #3003e1;
+  --rdp-background-color-dark: #180270;
+  --rdp-outline: 2px solid var(--rdp-accent-color); /* Outline border for focused elements */
+  --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.75); /* Outline border for focused _and_ selected elements */
+
+  margin: 1em;
+}
+
+/* Hide elements for devices that are not screen readers */
+.rdp-vhidden {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute !important;
+  top: 0;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  border: 0 !important;
+}
+
+/* Buttons */
+.rdp-button_reset {
+  appearance: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  color: inherit;
+  outline: none;
+  background: none;
+  font: inherit;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.rdp-button {
+  border: 2px solid transparent;
+}
+
+.rdp-button[disabled] {
+  opacity: 0.25;
+}
+
+.rdp-button:not([disabled]) {
+  cursor: pointer;
+}
+
+.rdp-button:focus:not([disabled]),
+.rdp-button:active:not([disabled]) {
+  color: inherit;
+  border: var(--rdp-outline);
+  background-color: var(--rdp-background-color);
+}
+
+.rdp-button:hover:not([disabled]) {
+  background-color: var(--rdp-background-color);
+}
+
+.rdp-months {
+  display: flex;
+}
+
+.rdp-month {
+  margin: 0 1em;
+}
+
+.rdp-month:first-child {
+  margin-left: 0;
+}
+
+.rdp-month:last-child {
+  margin-right: 0;
+}
+
+.rdp-table {
+  margin: 0;
+  max-width: calc(var(--rdp-cell-size) * 7);
+  border-collapse: collapse;
+}
+
+.rdp-with_weeknumber .rdp-table {
+  max-width: calc(var(--rdp-cell-size) * 8);
+  border-collapse: collapse;
+}
+
+.rdp-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+}
+
+.rdp-multiple_months .rdp-caption {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.rdp-caption_dropdowns {
+  position: relative;
+  display: inline-flex;
+}
+
+.rdp-caption_label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.25em;
+  white-space: nowrap;
+  color: currentColor;
+  border: 0;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.rdp-nav {
+  white-space: nowrap;
+}
+
+.rdp-multiple_months .rdp-caption_start .rdp-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.rdp-multiple_months .rdp-caption_end .rdp-nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.rdp-nav_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  padding: 0.25em;
+  border-radius: 100%;
+}
+
+/* ---------- */
+/* Dropdowns  */
+/* ---------- */
+
+.rdp-dropdown_year,
+.rdp-dropdown_month {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rdp-dropdown {
+  appearance: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: inherit;
+  opacity: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.rdp-dropdown[disabled] {
+  opacity: unset;
+  color: unset;
+}
+
+.rdp-dropdown:focus:not([disabled]) + .rdp-caption_label,
+.rdp-dropdown:active:not([disabled]) + .rdp-caption_label {
+  border: var(--rdp-outline);
+  border-radius: 6px;
+  background-color: var(--rdp-background-color);
+}
+
+.rdp-dropdown_icon {
+  margin: 0 0 0 5px;
+}
+
+.rdp-head {
+  border: 0;
+}
+
+.rdp-head_row,
+.rdp-row {
+  height: 100%;
+}
+
+.rdp-head_cell {
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-align: center;
+  height: 100%;
+  height: var(--rdp-cell-size);
+  padding: 0;
+}
+
+.rdp-tbody {
+  border: 0;
+}
+
+.rdp-tfoot {
+  margin: 0.5em;
+}
+
+.rdp-cell {
+  width: var(--rdp-cell-size);
+  height: 100%;
+  height: var(--rdp-cell-size);
+  padding: 0;
+  text-align: center;
+}
+
+.rdp-weeknumber {
+  font-size: 0.75em;
+}
+
+.rdp-weeknumber,
+.rdp-day {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--rdp-cell-size);
+  max-width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 100%;
+}
+
+.rdp-day_today:not(.rdp-day_outside) {
+  font-weight: bold;
+}
+
+.rdp-day_selected:not([disabled]),
+.rdp-day_selected:focus:not([disabled]),
+.rdp-day_selected:active:not([disabled]),
+.rdp-day_selected:hover:not([disabled]) {
+  color: white;
+  background-color: var(--rdp-accent-color);
+}
+
+.rdp-day_selected:focus:not([disabled]) {
+  border: var(--rdp-outline-selected);
+}
+
+.rdp:not([dir='rtl']) .rdp-day_range_start:not(.rdp-day_range_end) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rdp:not([dir='rtl']) .rdp-day_range_end:not(.rdp-day_range_start) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rdp[dir='rtl'] .rdp-day_range_start:not(.rdp-day_range_end) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rdp[dir='rtl'] .rdp-day_range_end:not(.rdp-day_range_start) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rdp-day_range_end.rdp-day_range_start {
+  border-radius: 100%;
+}
+
+.rdp-day_range_middle {
+  border-radius: 0;
+}
+</style><style>
+/* Static-page overrides: JavaScript removed. */
+.panel {
+  max-height: none !important;
+  overflow: visible !important;
+  display: block !important;
+}
+.accordion { cursor: default !important; }
+.menu a { cursor: pointer; }
+</style></head>
+<body style="display: block;">
+<div class="container-fluid">
+<div class="row dark-green-bg py-2 py-lg-4">
+<div class="container py-2 py-md-0">
+<section class="top-nav">
+<div>
+<img class="img-fluid d-block img-fluid d-block" src="https://prodentim101.com//statics/img/prodentim_logo.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="max-width:168px;"/>
+</div>
+<input id="menu-toggle" type="checkbox"/>
+<label class="menu-button-container" for="menu-toggle">
+<div class="menu-button"></div>
+</label>
+<ul class="menu">
+<li class="justify-content-sm-start hov align-self-md-center pl-4 pl-lg-0" for="menu-toggle"><a href="#about">About ProDentim</a></li>
+<li class="justify-content-sm-start hov align-self-md-center pl-4 pl-lg-0"><a href="#ingredients">Ingredients</a></li>
+<li class="justify-content-sm-start hov align-self-md-center pl-4 pl-lg-0"><a href="#faq">FAQ</a></li>
+<li class="justify-content-sm-start hov align-self-md-center pl-4 pl-lg-0"><a href="#order-now"><img class="order-now-button img-fluid d-block" src="https://prodentim101.com//statics/img/order-now.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a></li>
+</ul>
+</section>
+
+</div>
+</div>
+</div>
+<div class="light-green-bg">
+<div class="container-fluid">
+<div class="container">
+<div class="py-4"></div>
+<div class="py-2"></div>
+<div class="row">
+<div class="col-12 col-lg-5 pr-lg-0">
+<img class="img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/introducting_prodentim.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="col-12 col-lg-7 px-lg-0">
+<h2 class="text-white mt-1"><b>Brand New Probiotics <br class="d-none d-md-block"/>
+                        Specially Designed For The <br class="d-none d-md-block"/>
+                        Health Of Your Teeth And Gums</b>
+</h2>
+<p class="text-white pt-3 bigger"><b>Try ProDentim:</b> a unique blend of <b>3.5 billion</b> probiotic strains and nutrients backed by clinical research.</p>
+<div class="pt-1"></div>
+<img class="img-fluid d-block mx-auto mt-3" src="https://prodentim101.com//statics/img/certifications.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+</div>
+<div class="py-3"></div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container px-0">
+<div class="py-3"></div>
+<div class="py-3"></div>
+<div class="d-flex flex-column flex-lg-row">
+<div class="mr-lg-4" style="flex:3;">
+<img class="doctor-img img-fluid d-block mx-auto pb-4 pb-lg-0" src="https://prodentim101.com//statics/img/doctor.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="ml-lg-3" id="about" style="flex:8;">
+<p class="accent-red"><b>May 2022 - New Scientific Discovery</b></p>
+<h3><b>A recent study put out in the Springer Nature publication found that people who have good teeth have a high population of good bacteria in the mouth.</b></h3>
+<p class="accent-red"><b>(Hint - No Toothpaste or Mouthwash Involved)</b></p>
+<p class="smaller mb-0">As it turns out, many common dental products (such as toothpaste and mouthwash) contain toxic ingredients that can destroy the microbiome in the mouth. This explains why teeth can thrive for hundreds of years outside the mouth (in fossils), while in our mouth they get ruined by something so simple as chocolate.</p>
+<p class="smaller text-right"><u><a href="https://www.nature.com/articles/d41586-021-02920-w" style="color:#afafaf;" target="_blank">Reference Link</a></u></p>
+</div>
+</div>
+</div>
+<div class="py-2"></div>
+<div class="py-2"></div>
+</div>
+<div class="strawberry-bg">
+<div class="container-fluid">
+<div class="py-4"></div>
+<div class="py-2"></div>
+<div class="container white-bg-rounded">
+<div class="py-3"></div>
+<div class="d-flex flex-column flex-lg-row px-lg-2">
+<div class="mx-lg-4" style="flex:8;">
+<p class="bigger text-center mb-2"><b>That’s why we created</b></p>
+<img class="img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/prodentim-logo2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="width:280px;max-width:100%;"/>
+<div class="py-3"></div>
+<div class="">
+<p><b>ProDentim</b> is <b>unlike anything</b> you’ve ever tried or experienced in your life before.<br/>
+                           It’s the only product in the world with a <b>unique blend</b> of 3.5 billion probiotics and nutrients, specially designed to repopulate your mouth with <b>good bacteria</b>.
+                        </p>
+</div>
+<div class="dark-green-bg-round darkbg-position mt-4">
+<p class="text-white py-1 text-center px-lg-0 mb-0">Every ProDentim  you chew will support the good health of your gums and teeth.</p>
+</div>
+<div class="py-2"></div>
+</div>
+<div class="align-self-end" style="flex:3;">
+<img class="img-fluid d-block mx-auto pt-4 pt-lg-0" src="https://prodentim101.com//statics/img/prodentim-strawberry.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+<div class="py-3"></div>
+<div class="pt-1"></div>
+</div>
+<div class="py-4"></div>
+<div class="py-2"></div>
+</div>
+</div>
+<div class="container-fluid" id="ingredients">
+<div class="container px-0">
+<div class="py-3"></div>
+<div class="py-3"></div>
+<h2 class="text-center"><b>Inside every ProDentim  you’ll find:</b></h2>
+<p class="bigger text-center"><b>3.5 billions of probiotics</b>, along with <b>3 unique ingredients</b> that are clinically<br class="d-none d-lg-block"/> proven to <b>support the health of your teeth and gums</b></p>
+<div class="row mx-auto mt-5 mb-3">
+<div class="col-12 col-lg-4">
+<img class="probiotic-img img-fluid d-block mx-auto pt-4 pt-lg-0 mb-4" src="https://prodentim101.com//statics/img/pro_b1.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="dark-green-bg-round">
+<p class="bigger text-white text-center mb-0 py-1"><b>
+                        Lactobacillus Paracasei
+                        </b>
+</p>
+</div>
+<div class="py-1"></div>
+<ul class="triangle-check pl-0">
+<li class="medium"> Supports the health of your gums</li>
+<li class="medium"> Helps your sinuses stay free and open</li>
+</ul>
+</div>
+<div class="col-12 col-lg-4">
+<img class="probiotic-img img-fluid d-block mx-auto pt-4 pt-lg-0 mb-4" src="https://prodentim101.com//statics/img/pro_b3.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="dark-green-bg-round">
+<p class="bigger text-white text-center mb-0 py-1"><b>
+                        B.lactis BL-04®
+                        </b>
+</p>
+</div>
+<div class="py-1"></div>
+<ul class="triangle-check pl-0">
+<li class="medium"> Supports the balance of mouth bacteria</li>
+<li class="medium"> Supports respiratory tract</li>
+<li class="medium"> Maintains a healthy immune system</li>
+</ul>
+</div>
+<div class="col-12 col-lg-4">
+<img class="probiotic-img img-fluid d-block mx-auto pt-4 pt-lg-0 mb-4" src="https://prodentim101.com//statics/img/pro_b2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="dark-green-bg-round">
+<p class="bigger text-white text-center mb-0 py-1"><b>
+                        Lactobacillus Reuteri
+                        </b>
+</p>
+</div>
+<div class="py-1"></div>
+<ul class="triangle-check pl-0">
+<li class="medium"> Helps with inflammation</li>
+<li class="medium"> Supports a healthy mouth environment</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="py-4"></div>
+<div class="py-2"></div>
+<div class="container-md blend-bg px-0">
+<div class="d-flex flex-column flex-lg-row">
+<div class="mr-lg-4" style="flex:4;">
+<img class="img-fluid d-block mx-auto pb-4 pb-lg-0" src="https://prodentim101.com//statics/img/blend.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="ml-lg-5 px-3 px-md-0" style="flex:7;">
+<div class="my-lg-5"></div>
+<div class="pt-lg-1"></div>
+<h4 class=""><b>Proprietary Blend of 4 Plants and Minerals</b></h4>
+<div class="py-2"></div>
+<ul class="triangle-check pl-0">
+<li class="medium"> <b>Inulin</b> supports the good bacteria</li>
+<li class="medium"> <b>Malic acid</b> in strawberries helps maintain tooth whiteness</li>
+<li class="medium"> <b>Tricalcium Phosphate</b> supports tooth health</li>
+<li class="medium"> <b>Peppermint</b> is a natural anti-inflammatory</li>
+</ul>
+</div>
+</div>
+<div class="py-3 py-lg-0"></div>
+</div>
+<div class="py-3"></div>
+<div class="py-3"></div>
+</div>
+<div class="mint-bg">
+<div class="container-fluid">
+<div class="py-4"></div>
+<div class="py-2"></div>
+<div class="container-sm white-bg-rounded px-2">
+<div class="py-4"></div>
+<img class="doctor-img img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/prodentim-logo2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="width:415px;max-width:85%;"/>
+<div class="py-4"></div>
+<!-- <div class="row px-5">
+                  <div class="col-12 col-lg-4">
+                  <img src="https://prodentim101.com//statics/img/checkmark2.png" class="checkmark-bigger img-fluid d-inline-block">
+                  <p class="bigger d-inline medium-font">
+                  Natural Formula
+                              </p>
+                  </div>
+                  <div class="col-12 col-lg-4">
+                  <img src="https://prodentim101.com//statics/img/checkmark2.png" class="checkmark-bigger img-fluid d-inline-block">
+                  <p class="bigger d-inline medium-font">
+                  Easy To Use
+                              </p>
+                      </div>
+                      <div class="col-12 col-lg-4">
+                      <img src="https://prodentim101.com//statics/img/checkmark2.png" class="checkmark-bigger img-fluid d-inline-block">
+                  <p class="bigger d-inline medium-font">
+                  Non-GMO
+                              </p>
+                      </div>
+                  </div>
+                  <div class="row px-5">
+                  
+                  <div class="col-12 col-lg-4">
+                  <img src="https://prodentim101.com//statics/img/checkmark2.png" class="checkmark-bigger img-fluid d-inline-block">
+                  <p class="bigger d-inline medium-font">
+                  No Stimulants
+                             </p>
+                  </div>
+                  <div class="col-12 col-lg-4">
+                  <img src="https://prodentim101.com//statics/img/checkmark2.png" class="checkmark-bigger img-fluid d-inline-block">
+                  <p class="bigger d-inline medium-font">
+                  Non-Habit Forming
+                             </p>
+                     </div>
+                     <div class="col-12 col-lg-4">
+                     <img src="https://prodentim101.com//statics/img/checkmark2.png" class="checkmark-bigger img-fluid d-inline-block">
+                  <p class="bigger d-inline medium-font">
+                  Gluten Free
+                             </p>
+                     </div>
+                  </div> -->
+<div class="ml-lg-5 pl-lg-5">
+<div class="d-flex justify-content-end flex-column flex-lg-row pl-lg-4 pl-4">
+<div style="flex:4">
+<img class="checkmark-bigger img-fluid d-inline-block" src="https://prodentim101.com//statics/img/checkmark2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="bigger d-inline medium-font">
+                        Natural Formula
+                     </p>
+</div>
+<div style="flex:4">
+<img class="checkmark-bigger img-fluid d-inline-block" src="https://prodentim101.com//statics/img/checkmark2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="bigger d-inline medium-font">
+                        Easy To Use                        
+                     </p>
+</div>
+<div style="flex:4">
+<img class="checkmark-bigger img-fluid d-inline-block" src="https://prodentim101.com//statics/img/checkmark2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="bigger d-inline medium-font">
+                        Non-GMO                        
+                     </p>
+</div>
+</div>
+<div class="d-flex justify-content-end flex-column flex-lg-row pl-lg-4 pl-4">
+<div style="flex:4">
+<img class="checkmark-bigger img-fluid d-inline-block" src="https://prodentim101.com//statics/img/checkmark2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="bigger d-inline medium-font">
+                        No Stimulants
+                     </p>
+</div>
+<div style="flex:4">
+<img class="checkmark-bigger img-fluid d-inline-block" src="https://prodentim101.com//statics/img/checkmark2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="bigger d-inline medium-font">
+                        Non-Habit Forming
+                     </p>
+</div>
+<div style="flex:4">
+<img class="checkmark-bigger img-fluid d-inline-block" src="https://prodentim101.com//statics/img/checkmark2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="bigger d-inline medium-font">
+                        Gluten Free                        
+                     </p>
+</div>
+</div>
+</div>
+<div class="py-3"></div>
+<div class="pt-1"></div>
+</div>
+<div class="py-4"></div>
+<div class="py-2"></div>
+</div>
+</div>
+<div class="bonus-bg">
+<div class="container-fluid">
+<div class="py-4"></div>
+<div class="py-lg-2"></div>
+<h1 class="small-title text-white text-center">Order <b>6 Bottles</b> <br/> and Get
+                <u><b>3 FREE Bonuses!</b></u></h1>
+<div class="container mt-5">
+<div class="row justify-content-between">
+<div class="col-12 col-lg-4 col-lg-4-small bonus-green-border">
+<div class="div py-3">
+<img class="img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/bonus1.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="dark-green-bg">
+<p class="mb-0 text-white text-center py-2 px-2 px-md-0"><b><span class="accent-yellow">Bonus #1</span> <br/> Bad Breath Gone. One Day Detox</b>
+</p>
+</div>
+<div class="bg-white py-3 px-md-3 pb-md-5 py-md-3 info-desc">
+<h3 class="text-center"><b>RRP - <strike>$55</strike></b> <br/> Today: <b>FREE</b></h3>
+<div class="py-lg-2"></div>
+<p class="text-center px-lg-2 px-4" style="font-size:18px">Kickstart your ProDentim journey and enjoy fresh breath naturally with 7 unexpected spice and herb mixes from your kitchen that can do wonders.</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4 col-lg-4-small bonus-green-border mt-4 mt-lg-0">
+<div class="div py-3">
+<img class="img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/bonus2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="dark-green-bg">
+<p class="mb-0 text-white text-center py-2 px-2 px-md-0"><b><span class="accent-yellow">Bonus #2</span> <br/> Hollywood White Teeth at Home</b>
+</p>
+</div>
+<div class="bg-white py-3 px-md-3 py-md-3 info-desc">
+<h3 class="text-center"><b>RRP - <strike>$54</strike></b> <br/> Today: <b>FREE</b></h3>
+<div class="py-lg-2"></div>
+<p class="text-center px-lg-2 px-4" style="font-size:18px">Find out everything about the simple 10 second “Bright Teeth” method you can do right now. You’ll also discover one little-known brushing trick that’s very popular among celebrities and more!</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4 col-lg-4-small bonus-green-border mt-4 mt-lg-0">
+<div class="div py-3">
+<img class="img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/bonus3.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="dark-green-bg">
+<p class="mb-0 text-white text-center py-2 px-2 px-md-0"><b><span class="accent-yellow">Bonus #3</span> <br/> At-Home Oral Reset</b>
+</p>
+</div>
+<div class="bg-white py-3 px-md-3 py-md-3 info-desc">
+<h3 class="text-center"><b>RRP - <strike>$54</strike></b> <br/> Today: <b>FREE</b></h3>
+<div class="py-lg-2"></div>
+<p class="text-center px-lg-2 px-4" style="font-size:18px">Discover the 10-second mouth swish and fruit peel trick that instantly brightens teeth and erase plaque. Plus, get a powerful 3-ingredient rinse and tongue exercise that strengthens your smile.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="py-4"></div>
+<div class="py-2"></div>
+</div>
+</div>
+<div class="dark-green-bg">
+<div class="container-fluid">
+<div class="container">
+<div class="row px-lg-5 py-4">
+<div class="d-flex flex-column flex-lg-row">
+<div>
+<img class="img-fluid d-block mx-auto shipping-badge py-2" src="https://prodentim101.com//statics/img/free-shipping.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="align-self-center ml-lg-4 pl-lg-3 pt-3 pt-md-0">
+<h1 class="small-title text-white text-center"><b>Every 6 Bottles Order Gets <br class="d-none d-md-block"/><span class="text-yellow"><u>FREE Shipping</u> Too!</span></b></h1>
+<h4 class="small-title text-white text-center medium">*97% Of Customers Order 6 Bottles (Our Recommended Option)</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white">
+<div class="container-fluid">
+<div class="row mt-5">
+<div class="container">
+<div class="col-12 col-lg-10 mx-auto px-0">
+<div class="py-1"></div>
+<h1 class="small-title text-center">
+<b> Real ProDentim  Users.<br/>
+                        Real Life-Changing Results.</b>
+</h1>
+<div class="py-4"></div>
+<img class="img-fluid d-none d-lg-block mx-auto py-2" src="https://prodentim101.com//statics/img/review-images2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img class="img-fluid d-block d-lg-none mx-auto py-2" src="https://prodentim101.com//statics/img/mobile-testimonials-img.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="py-4"></div>
+<!-- TESTIMONIAL BOX -->
+<div class="d-flex flex-column flex-md-row px-3">
+<div class="div" style="flex:1">
+<img class="testimonial-face img-fluid d-none d-md-block mx-auto mb-2 mb-lg-0" src="https://prodentim101.com//statics/img/testimonial-face-sam.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="ml-lg-3" style="flex:8">
+<h3><b>
+                              Sam Perkin is enjoying better oral health…
+                              </b>
+</h3>
+<img class="testimonial-stars img-fluid d-inline-block" src="https://prodentim101.com//statics/img/testimonial-stars.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="smaller2 d-inline medium-font ml-2"><b>
+                              Verified Purchase
+                              </b>
+</p>
+<p class="bigger pt-2 mb-2">
+                              “I’ve always taken such good care of my teeth but it always felt like I wasn’t doing enough. Now, for the first time in decades, 
+                              my teeth feel amazing.”
+                           </p>
+<p class="mb-1">
+<b>Sam Perkin</b> - Dallas, USA
+                           </p>
+</div>
+</div>
+<!-- TESTIMONIAL BOX -->
+<!-- TESTIMONIAL BOX -->
+<div class="d-flex flex-column flex-md-row px-3 mt-5">
+<div class="div" style="flex:1">
+<img class="testimonial-face img-fluid d-none d-md-block mx-auto mb-2 mb-lg-0" src="https://prodentim101.com//statics/img/testimonial-face2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="ml-lg-3" style="flex:8">
+<h3><b>
+                              Portia Thompson loves her fresh breath…
+                              </b>
+</h3>
+<img class="testimonial-stars img-fluid d-inline-block" src="https://prodentim101.com//statics/img/testimonial-stars.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="smaller2 d-inline medium-font ml-2"><b>
+                              Verified Purchase
+                              </b>
+</p>
+<p class="bigger pt-2 mb-2">
+                              “It’s just unbelievable how much I like ProDentim. I’m so glad my dentist recommended it to me!”
+                           </p>
+<p class="mb-1">
+<b>Portia Thompson</b> - Florida, USA
+                           </p>
+</div>
+</div>
+<!-- TESTIMONIAL BOX -->
+<!-- TESTIMONIAL BOX -->
+<div class="d-flex flex-column flex-md-row px-3 my-5">
+<div class="div" style="flex:1">
+<img class="testimonial-face img-fluid d-none d-md-block mx-auto mb-2 mb-lg-0" src="https://prodentim101.com//statics/img/testimonial-face3.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="ml-lg-3" style="flex:8">
+<h3><b>
+                              Theo Franklin doesn’t spend fortunes on dentists...
+                              </b>
+</h3>
+<img class="testimonial-stars img-fluid d-inline-block" src="https://prodentim101.com//statics/img/testimonial-stars.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="smaller2 d-inline medium-font ml-2"><b>
+                              Verified Purchase
+                              </b>
+</p>
+<p class="bigger pt-2 mb-2">
+                              “My gums have never looked better. It feels so good to not have to worry about my teeth. I simply love it!”
+                           </p>
+<p class="mb-1">
+<b>Theo Franklin</b> - Chicago, USA
+                           </p>
+</div>
+</div>
+<!-- TESTIMONIAL BOX -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="dark-green-bg">
+<div class="container-fluid">
+<div class="row py-4">
+<div class="container">
+<h2 class="smaller text-white text-center mb-0 pb-0"><b>
+                     Claim Your Discounted ProDentim<br/> Below While Stocks Last!
+                     </b>
+</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="triangle-grey-ctr tg"></div>
+<div class="py-5"></div>
+<div class="py-3"></div>
+<style>
+   .triangle-grey-ctr2 {
+   position: relative;
+   top: -3px;
+}
+   .triangle-grey-ctr2:after,
+   .triangle-grey-ctr2:before {
+   content: " ";
+   display: block;
+   background-color: #007953;
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: -13px;
+   left: 50%;
+   z-index: 0;
+   -webkit-transform: translate(-50%, -50%) rotate(45deg);
+   -ms-transform: translate(-50%, -50%) rotate(45deg);
+   transform: translate(-50%, -50%) rotate(45deg);
+}
+
+   @media(min-width: 992px) {
+      .pricebox-price-img1 {
+         margin-top: 27px;
+      }
+      .pricebox-price-img3{
+         margin-top: 35px!important;
+      }
+      .buy-button1 {
+         margin-top: 85px;
+      }
+      .buy-button3{
+         margin-top: 94px;
+      }
+      .center.card-section {
+      position: relative;
+      top: -27px!important;
+    }
+   }
+</style>
+<div class="container pricebox">
+<div class="row">
+<div class="col-lg-4 col-12 mb-3 col-lg-4 order-3 order-lg-0">
+<div class="price-box left">
+<p class="d-block d-lg-none text-center text-white p-2 semi-b pack-text" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Basic</p>
+<div class="row px-2 px-lg-0">
+<div class="col-6 col-lg-12 d-flex d-lg-block justify-content-center">
+<div class="price_header">
+<div class="py-md-0 py-2"></div>
+<p class="d-none d-lg-block text-center text-white p-2 semi-b pack-text" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Basic</p>
+<div class="pt-0 pt-lg-2"></div>
+<h3 class="pricebox-bottle-nr text-center pt-lg-4 mb-0"><b style="color:#4cae85">2 BOTTLES</b>
+</h3>
+<p class="pricebox-day-supply-nr text-center text-dark mb-0 medium">·
+                  60 Day Supply ·
+               </p>
+<div class="py-3 py-lg-2"></div>
+<img class="pricebox-m-product-img1 d-block d-lg-none mx-auto img-fluid" productimage="305" src="https://prodentim101.com//statics/img/prod_2_bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" type="fe"/>
+</div>
+</div>
+<div class="col-6 col-lg-12 pl-0 pl-lg-3">
+<div class="card-product">
+<div class="price_product_box">
+<img class="pricebox-product-img1 d-none d-lg-block mx-auto img-fluid px-3" productimage="305" src="https://prodentim101.com//statics/img/prod_2_bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="max-height: 215px;top:15px;" type="fe"/>
+</div>
+<div class="d-lg-none d-block guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save200.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="pt-lg-3 pt-3"></div>
+<img class="pricebox-price-img1 img-fluid mx-auto d-block" src="https://prodentim101.com//statics/img/79.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="d-lg-block d-none guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-none d-lg-block img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save200.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-none d-lg-block img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="py-lg-2 py-1"></div>
+<a buylink="buy305_link" class="mb-1 mb-lg-3 add_script mx-auto d-block add_view" href="https://prodentim.pay.clickbank.net/?cbitems=305&amp;cbskin=&amp;template=1200&amp;exitoffer=1&amp;cbfid=57957&amp;&amp;hop=mmcaires&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445&amp;_ga=2145512051.1781536788&amp;vq=01.C279D958DBF47A5AB4BECEDD0659420FF0A48F1D504523DAC514E8C34DD4505944AB0A6D0E883FDF9B2E09F7C93D9DDC4E854910"><img alt="" class="buy-button1 img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/buy-now.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a>
+<div class="card-section py-0 py-lg-1">
+<p class="pricebox-total-price text-center mt-0 mb-0 mb-lg-1">TOTAL: <s>$358</s><b>
+                     $158</b>
+</p>
+<img alt="" class="credit-cards img-fluid mx-auto d-block mb-0 pb-lg-4" src="https://prodentim101.com//statics/img/credit-cards.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="pricebox-shipping-info text-center medium">+ 9.99 Shipping</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12 mb-3 col-lg-4 order-lg-2 highlighted">
+<div class="price-box middle">
+<p class="text-center text-white p-2 semi-b pack-text" style="background-color:#007953; border-top-left-radius: 12px; border-top-right-radius: 12px;">BEST VALUE!</p>
+<div class="triangle-grey-ctr2 tg d-lg-block d-none"></div>
+<div class="row pt-3 py-lg-0 px-2 px-lg-0">
+<div class="col-6 col-lg-12 mt-3 mt-lg-0">
+<div class="price_header">
+<div class="pt-lg-2"></div>
+<h3 class="pricebox-bottle-nr text-center pt-lg-4 mb-0"><b style="color:#007953">3 + 3 BOTTLES</b>
+</h3>
+<p class="pricebox-day-supply-nr text-center text-dark mb-0 medium">·
+                  180 Day Supply ·
+               </p>
+<div class="py-1 py-lg-2"></div>
+<img class="pricebox-m-product-img6 d-block d-lg-none mx-auto img-fluid" src="https://prodentim101.com//statics/img/fe_6_bottle_mob.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img class="pricebox-m-product-img6 d-block d-lg-none mx-auto img-fluid" src="https://prodentim101.com//statics/img/bonuses.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+<div class="col-6 col-lg-12 pl-0 pl-lg-3">
+<div class="card-product">
+<div class="price_product_box">
+<img class="pricebox-product-img6 d-none d-lg-block mx-auto img-fluid mt-2 mt-lg-2 px-3" productimage="307" src="https://prodentim101.com//statics/img/fe_6_bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" type="fe"/>
+</div>
+<div class="d-lg-none d-block guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-lg-none d-block img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save780.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/discount.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/3free.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="pt-lg-3 pt-2"></div>
+<img class="pricebox-price-img6 img-fluid mx-auto d-block pt-0 pt-lg-5" src="https://prodentim101.com//statics/img/49.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="d-lg-block d-none guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save780.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/discount.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/3free.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="py-lg-2 py-1"></div>
+<a buylink="buy307_link" class="mb-3 mx-auto add_script d-block add_view" href="https://prodentim.pay.clickbank.net/?cbitems=307&amp;cbskin=&amp;template=1400&amp;exitoffer=1&amp;cbfid=57959&amp;&amp;hop=mmcaires&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445&amp;_ga=2145512051.1781536788&amp;vq=01.C279D958DBF47A5AB4BECEDD0659420FF0A48F1D504523DAC514E8C34DD4505944AB0A6D0E883FDF9B2E09F7C93D9DDC4E854910"><img alt="" class="buy-button6 img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/buy-now2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a>
+<div class="center card-section py-0 py-lg-2">
+<p class="pricebox-total-price text-center mt-0 mb-0 mb-lg-1">TOTAL: <s>$1074</s><b>
+                     $294</b>
+</p>
+<img alt="" class="credit-cards img-fluid mx-auto d-block mb-0 pb-lg-4" src="https://prodentim101.com//statics/img/credit-cards.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="pricebox-shipping-info text-center medium">*FREE Shipping </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12 mb-3 col-lg-4 order-2 order-lg-3">
+<div class="price-box right">
+<p class="d-block d-lg-none text-center text-white p-2 semi-b pack-text justify-content-center" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Most popular</p>
+<div class="row py-3 py-lg-0 px-2 px-lg-0">
+<div class="col-6 col-lg-12 mt-3 mt-lg-0">
+<div class="price_header">
+<p class="d-none d-lg-block text-center text-white p-2 semi-b pack-text justify-content-center" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Most popular</p>
+<div class="pt-lg-2"></div>
+<h3 class="pricebox-bottle-nr text-center pt-lg-4 mb-0"><b style="color:#4cae85">2 + 1 BOTTLES</b>
+</h3>
+<p class="pricebox-day-supply-nr text-center text-dark mb-0 medium">·
+                  90 Day Supply ·
+               </p>
+<div class="py-3 py-lg-0"></div>
+<img class="pricebox-m-product-img3 d-block d-lg-none mx-auto img-fluid" src="https://prodentim101.com//statics/img/prodentim3-bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+<div class="col-6 col-lg-12 pl-0 pl-lg-3">
+<div class="card-product">
+<div class="price_product_box">
+<img class="pricebox-product-img3 d-none d-lg-block mx-auto img-fluid pl-2 px-2" src="https://prodentim101.com//statics/img/prodentim3-bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="top:16px;max-height:225px;"/>
+</div>
+<div class="d-lg-none d-block guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save330.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="pt-lg-3 pt-4"></div>
+<img class="pricebox-price-img3 img-fluid mx-auto d-block" src="https://prodentim101.com//statics/img/69.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="margin-top: -10px;"/>
+<div class="d-lg-block d-none guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save330.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="py-lg-2 py-1"></div>
+<a buylink="buy306_link" class="mb-2 mb-lg-3 mx-auto add_script d-block add_view" href="https://prodentim.pay.clickbank.net/?cbitems=306&amp;cbskin=&amp;template=1300&amp;exitoffer=1&amp;cbfid=57958&amp;&amp;hop=mmcaires&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445&amp;_ga=2145512051.1781536788&amp;vq=01.C279D958DBF47A5AB4BECEDD0659420FF0A48F1D504523DAC514E8C34DD4505944AB0A6D0E883FDF9B2E09F7C93D9DDC4E854910"><img alt="" class="buy-button3 img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/buy-now.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a>
+<div class="card-section py-0 py-lg-1">
+<p class="pricebox-total-price text-center mt-0 mb-0 mb-lg-1">TOTAL: <s>$537</s><b>
+                     $207</b>
+</p>
+<img alt="" class="credit-cards img-fluid mx-auto d-block mb-0 pb-lg-4" src="https://prodentim101.com//statics/img/credit-cards.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="pricebox-shipping-info text-center medium">*FREE Shipping </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="pt-1"></div>
+<div class="bg-white">
+<div class="container-fluid">
+<div class="row py-4">
+<div class="container">
+<p class="bigger text-center mb-0">
+                     Our customers say
+                  </p>
+<img class="img-fluid d-block mx-auto py-2" src="https://prodentim101.com//statics/img/testimonial-stars.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="max-width:245px;"/>
+<p class="bigger text-center">
+                     based on <b>95,000 reviews!</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="strawberry-bg2">
+<div class="container-fluid">
+<div class="py-4 py-lg-5"></div>
+<div class="py-1"></div>
+<div class="container-md white-bg-rounded">
+<div class="py-3"></div>
+<div class="d-flex flex-column flex-lg-row px-lg-4">
+<div class="align-self-center align-self-md-end" style="flex:3;">
+<img class="guarantee-img img-fluid d-block mx-auto pb-4 pb-lg-0" src="https://prodentim101.com//statics/img/guarantee_badge.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="" style="flex:8;">
+<div class="py-3"></div>
+<h1 class="small-title"><b>100% Satisfaction <br class="d-none d-lg-block"/>
+                        60-Day Money Back Guarantee</b>
+</h1>
+<p class="bigger medium mb-0">Your order today is covered by our iron-clad 60-day 100%<br class="d-none d-lg-block"/>
+                        money-back guarantee. If you are not impressed by the <br class="d-none d-lg-block"/>
+                        transformation of your gums and teeth or you don’t admire your <br class="d-none d-lg-block"/>
+                        Hollywood-star smile, then at any time in the next 60 days write<br class="d-none d-lg-block"/>
+                        to us and we’ll refund every single cent.
+                     </p>
+</div>
+</div>
+<div class="py-4"></div>
+<div class="py-lg-3"></div>
+</div>
+<div class="py-4 py-lg-5"></div>
+<div class="py-lg-1"></div>
+</div>
+</div>
+<div class="badges-bg">
+<div class="container-fluid">
+<div class="row py-2">
+<div class="container">
+<div class="col-12 col-lg-8 mx-auto">
+<img class="img-fluid d-block mx-auto py-5" src="https://prodentim101.com//statics/img/certifications.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="" id="faq">
+<div class="container-fluid">
+<div class="row mt-5">
+<div class="container-md">
+<div class="col-12 col-lg-12 mx-auto px-0">
+<div class="py-1"></div>
+<h2 class="text-center bold tsl">
+                            Frequently Asked Questions
+                        </h2>
+<div class="py-4"></div>
+<style>
+button:focus {
+    outline: none;
+}
+
+.arrow {
+    background-image: url(./statics/img/arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    cursor: pointer;
+}
+
+
+
+
+.accordion {
+    background-color: #EFEFEF;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 11px;
+    outline: none;
+    transition: 0.4s;
+    font-size: 30px;
+    font-family: bold-font;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+
+.accordion:hover {
+    background-color: lightgrey;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    font-family: medium-font;
+}
+h3.acc{
+    font-size:30px;
+}
+h2.tsl{
+        font-size:44px;
+    }
+@media (max-width: 993px) {
+    .arrow {
+        background-image: url(./statics/img/arrow.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20%;
+        cursor: pointer;
+    }
+
+    .accordion {
+        background-color: #EFEFEF;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        margin-bottom: 10px;
+        width: 100%;
+        border-radius: 11px;
+        outline: none;
+        transition: 0.4s;
+        font-size: 18px;
+        font-family: bold-font;
+        padding-left: 2px;
+        padding-right: 0px;
+
+    }
+    h3.acc{
+        font-size:18px;
+    }
+    h2.tsl{
+        font-size:32px;
+    }
+}
+</style>
+<div class="accordion-div">
+<button class="accordion" type="button"><span class="faq__question-heading">
+<div class="row">
+<div class="col-9 col-md-11 toggle-headline py-md-4 py-2 px-md-4 ml-md-0 ml-2">
+<h3 class="my-0 mx-1 acc"><b> How and why does ProDentim work? </b></h3>
+</div>
+<div class="col text-right arrow">
+</div>
+</div>
+</span></button>
+<div class="panel">
+<p class="acc ml-md-4">Well, the way this works is pretty simple actually…
+        </p>
+<p class="acc medium ml-md-4">
+            We’ve always been told that “bad” bacteria are to blame for all dental diseases but, upon a closer look,
+            scientists have realized that imbalance in the oral health is caused by the lack of good bacteria.
+        </p>
+<p class="acc ml-md-4">
+            The population of good bacteria can be harmed by common dental products that might contain toxic
+            ingredients. This explains why teeth can thrive for thousands of years outside of the mouth, while in our
+            mouth they get ruined by plain chocolate.
+
+        </p>
+<p class="acc ml-md-4">
+            In order to support the health of your teeth and gums, you need to repopulate your mouth with good bacteria
+            and provide a healthy environment for the strains to grow in.
+
+
+        </p>
+<p class="acc ml-md-4 pb-2">
+            ProDentim is a doctor-formulated mix that gathers 3 scientifically proven, potent strains, combining a total
+            of 3.5 Billion good bacteria into one revolutionary dissolvable candy.
+
+
+        </p>
+<p class="acc ml-md-4 pb-2">
+            This probiotic candy also targets your respiratory system, supporting your body to stay free from allergies,
+            while also promoting restful sleep and good digestion.
+        </p>
+<p></p>
+</div>
+<button class="accordion" type="button"><span class="faq__question-heading">
+<div class="row">
+<div class="col-9 col-md-11 toggle-headline py-md-4 py-2 px-3 px-md-4 ml-md-0 ml-2">
+<h3 class="my-0 mx-1 acc"><b>Are there any side effects?</b></h3>
+</div>
+<div class="col text-right arrow">
+</div>
+</div>
+</span>
+</button>
+<div class="panel">
+<p class="acc ml-md-4">ProDentim has been designed for all ages and medical conditions. All of the ingredients
+            inside of ProDentim have been generally considered to be safe, and are constantly tested for purity and to
+            ensure against toxins and contaminants. Moreover, ProDentim is manufactured in an FDA-approved facility,
+            under sterile, strict and precise standards.
+
+
+        </p>
+<p class="acc ml-md-4">As always, if you currently have a medical condition or you’re taking other prescription
+            medication, we advise you to show a bottle of ProDentim to your doctor before you take it, just to put your
+            mind at ease.
+
+        </p>
+</div>
+<button class="accordion" type="button"><span class="faq__question-heading">
+<div class="row">
+<div class="col-9 col-md-11 toggle-headline py-md-4 py-2 px-3 px-md-4 ml-md-0 ml-2">
+<h3 class="my-0 mx-1 acc"><b> When and how should I take ProDentim? </b></h3>
+</div>
+<div class="col text-right arrow">
+</div>
+</div>
+</span></button>
+<div class="panel">
+<p class="acc ml-md-4 pb-2"> We recommend you slowly chew a tablet every morning to support the health of your
+            entire body, gums and teeth.
+
+        </p>
+</div>
+<button class="accordion" type="button"><span class="faq__question-heading">
+<div class="row">
+<div class="col-9 col-md-11 toggle-headline py-md-4 py-2 px-3 px-md-4 ml-md-0 ml-2">
+<h3 class="my-0 mx-1 acc"><b>Can you tell me about the guarantee again?</b></h3>
+</div>
+<div class="col text-right arrow">
+</div>
+</div>
+</span></button>
+<div class="panel">
+<p class="acc ml-md-4">The more results we see, the stronger we believe ProDentim has the power to transform
+            lives. It’s true, though, that nothing works for 100% of the people who try it as each body works in its own
+            way.
+        </p>
+<p class="acc ml-md-4 pb-2">That’s why every bottle of ProDentim comes with an ironclad 60-day money back
+            guarantee. If, for any reason, you aren’t fully satisfied with the results, you can just return what you
+            haven't used for a full, no question asked refund.
+        </p>
+</div>
+<button class="accordion" type="button"><span class="faq__question-heading">
+<div class="row">
+<div class="col-9 col-md-11 toggle-headline py-md-4 py-2 px-3 px-md-4 ml-md-0 ml-2">
+<h3 class="my-0 mx-1 acc"><b>How can I get started?</b></h3>
+</div>
+<div class="col text-right arrow">
+</div>
+</div>
+</span></button>
+<div class="panel">
+<p class="acc m ml-md-4">It’s very easy! Just click the button below now to go to our secure order checkout
+            page, enter in your information, and we’ll immediately get to work shipping ProDentim right to your
+            doorstep.
+        </p>
+</div>
+<button class="accordion" type="button"><span class="faq__question-heading">
+<div class="row">
+<div class="col-9 col-md-11 toggle-headline py-md-4 py-2 px-3 px-md-4 ml-md-0 ml-2">
+<h3 class="my-0 mx-1 acc"><b>*Shipping policy</b></h3>
+</div>
+<div class="col text-right arrow">
+</div>
+</div>
+</span></button>
+<div class="panel">
+<div class="container tabel pl-md-5 ml-md-5">
+<div class="row pr-md-5 pl-md-3">
+<div class="col-12 pl-2">
+<table class="py-3 py-md-3 table">
+<tbody><tr class="" style="border-top: 2px solid white;">
+<th scope="col"><b>Delivery Address</b></th>
+<th scope="col"><b>Shipping Fee </b></th>
+<th scope="col"><b>Shipping Time</b></th>
+</tr>
+<tr>
+<td>United States</td>
+<td class="free-mark">FREE </td>
+<td>5-7 working days</td>
+</tr>
+<tr>
+<td>Canada </td>
+<td>$15.95</td>
+<td>10-15 working days</td>
+</tr>
+<tr>
+<td>UK and Ireland</td>
+<td>$15.95</td>
+<td>10-15 working days</td>
+</tr>
+<tr>
+<td>Australia and New Zealand</td>
+<td>$15.95</td>
+<td>10-15 working days</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<div class="py-md-4 py-1"></div>
+<div class="py-4"></div>
+<div class="dark-green-bg">
+<div class="container-fluid">
+<div class="row py-4">
+<div class="container">
+<h2 class="smaller text-white text-center mb-0 pb-0"><b>
+                     Claim Your Discounted ProDentim<br/> Below While Stocks Last!
+                     </b>
+</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="triangle-grey-ctr tg"></div>
+<div class="py-5"></div>
+<div class="py-3" id="order-now"></div>
+<style>
+   .triangle-grey-ctr2 {
+   position: relative;
+   top: -3px;
+}
+   .triangle-grey-ctr2:after,
+   .triangle-grey-ctr2:before {
+   content: " ";
+   display: block;
+   background-color: #007953;
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: -13px;
+   left: 50%;
+   z-index: 0;
+   -webkit-transform: translate(-50%, -50%) rotate(45deg);
+   -ms-transform: translate(-50%, -50%) rotate(45deg);
+   transform: translate(-50%, -50%) rotate(45deg);
+}
+
+   @media(min-width: 992px) {
+      .pricebox-price-img1 {
+         margin-top: 27px;
+      }
+      .pricebox-price-img3{
+         margin-top: 35px!important;
+      }
+      .buy-button1 {
+         margin-top: 85px;
+      }
+      .buy-button3{
+         margin-top: 94px;
+      }
+      .center.card-section {
+      position: relative;
+      top: -27px!important;
+    }
+   }
+</style>
+<div class="container pricebox">
+<div class="row">
+<div class="col-lg-4 col-12 mb-3 col-lg-4 order-3 order-lg-0">
+<div class="price-box left">
+<p class="d-block d-lg-none text-center text-white p-2 semi-b pack-text" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Basic</p>
+<div class="row px-2 px-lg-0">
+<div class="col-6 col-lg-12 d-flex d-lg-block justify-content-center">
+<div class="price_header">
+<div class="py-md-0 py-2"></div>
+<p class="d-none d-lg-block text-center text-white p-2 semi-b pack-text" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Basic</p>
+<div class="pt-0 pt-lg-2"></div>
+<h3 class="pricebox-bottle-nr text-center pt-lg-4 mb-0"><b style="color:#4cae85">2 BOTTLES</b>
+</h3>
+<p class="pricebox-day-supply-nr text-center text-dark mb-0 medium">·
+                  60 Day Supply ·
+               </p>
+<div class="py-3 py-lg-2"></div>
+<img class="pricebox-m-product-img1 d-block d-lg-none mx-auto img-fluid" productimage="305" src="https://prodentim101.com//statics/img/prod_2_bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" type="fe"/>
+</div>
+</div>
+<div class="col-6 col-lg-12 pl-0 pl-lg-3">
+<div class="card-product">
+<div class="price_product_box">
+<img class="pricebox-product-img1 d-none d-lg-block mx-auto img-fluid px-3" productimage="305" src="https://prodentim101.com//statics/img/prod_2_bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="max-height: 215px;top:15px;" type="fe"/>
+</div>
+<div class="d-lg-none d-block guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save200.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="pt-lg-3 pt-3"></div>
+<img class="pricebox-price-img1 img-fluid mx-auto d-block" src="https://prodentim101.com//statics/img/79.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="d-lg-block d-none guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-none d-lg-block img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save200.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-none d-lg-block img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="py-lg-2 py-1"></div>
+<a buylink="buy305_link" class="mb-1 mb-lg-3 add_script mx-auto d-block add_view" href="https://prodentim.pay.clickbank.net/?cbitems=305&amp;cbskin=&amp;template=1200&amp;exitoffer=1&amp;cbfid=57957&amp;&amp;hop=mmcaires&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445&amp;_ga=2145512051.1781536788&amp;vq=01.C279D958DBF47A5AB4BECEDD0659420FF0A48F1D504523DAC514E8C34DD4505944AB0A6D0E883FDF9B2E09F7C93D9DDC4E854910"><img alt="" class="buy-button1 img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/buy-now.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a>
+<div class="card-section py-0 py-lg-1">
+<p class="pricebox-total-price text-center mt-0 mb-0 mb-lg-1">TOTAL: <s>$358</s><b>
+                     $158</b>
+</p>
+<img alt="" class="credit-cards img-fluid mx-auto d-block mb-0 pb-lg-4" src="https://prodentim101.com//statics/img/credit-cards.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="pricebox-shipping-info text-center medium">+ 9.99 Shipping</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12 mb-3 col-lg-4 order-lg-2 highlighted">
+<div class="price-box middle">
+<p class="text-center text-white p-2 semi-b pack-text" style="background-color:#007953; border-top-left-radius: 12px; border-top-right-radius: 12px;">BEST VALUE!</p>
+<div class="triangle-grey-ctr2 tg d-lg-block d-none"></div>
+<div class="row pt-3 py-lg-0 px-2 px-lg-0">
+<div class="col-6 col-lg-12 mt-3 mt-lg-0">
+<div class="price_header">
+<div class="pt-lg-2"></div>
+<h3 class="pricebox-bottle-nr text-center pt-lg-4 mb-0"><b style="color:#007953">3 + 3 BOTTLES</b>
+</h3>
+<p class="pricebox-day-supply-nr text-center text-dark mb-0 medium">·
+                  180 Day Supply ·
+               </p>
+<div class="py-1 py-lg-2"></div>
+<img class="pricebox-m-product-img6 d-block d-lg-none mx-auto img-fluid" src="https://prodentim101.com//statics/img/fe_6_bottle_mob.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img class="pricebox-m-product-img6 d-block d-lg-none mx-auto img-fluid" src="https://prodentim101.com//statics/img/bonuses.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+<div class="col-6 col-lg-12 pl-0 pl-lg-3">
+<div class="card-product">
+<div class="price_product_box">
+<img class="pricebox-product-img6 d-none d-lg-block mx-auto img-fluid mt-2 mt-lg-2 px-3" productimage="307" src="https://prodentim101.com//statics/img/fe_6_bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" type="fe"/>
+</div>
+<div class="d-lg-none d-block guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-lg-none d-block img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save780.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/discount.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/3free.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="pt-lg-3 pt-2"></div>
+<img class="pricebox-price-img6 img-fluid mx-auto d-block pt-0 pt-lg-5" src="https://prodentim101.com//statics/img/49.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<div class="d-lg-block d-none guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save780.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/discount.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/3free.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="py-lg-2 py-1"></div>
+<a buylink="buy307_link" class="mb-3 mx-auto add_script d-block add_view" href="https://prodentim.pay.clickbank.net/?cbitems=307&amp;cbskin=&amp;template=1400&amp;exitoffer=1&amp;cbfid=57959&amp;&amp;hop=mmcaires&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445&amp;_ga=2145512051.1781536788&amp;vq=01.C279D958DBF47A5AB4BECEDD0659420FF0A48F1D504523DAC514E8C34DD4505944AB0A6D0E883FDF9B2E09F7C93D9DDC4E854910"><img alt="" class="buy-button6 img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/buy-now2.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a>
+<div class="center card-section py-0 py-lg-2">
+<p class="pricebox-total-price text-center mt-0 mb-0 mb-lg-1">TOTAL: <s>$1074</s><b>
+                     $294</b>
+</p>
+<img alt="" class="credit-cards img-fluid mx-auto d-block mb-0 pb-lg-4" src="https://prodentim101.com//statics/img/credit-cards.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="pricebox-shipping-info text-center medium">*FREE Shipping </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12 mb-3 col-lg-4 order-2 order-lg-3">
+<div class="price-box right">
+<p class="d-block d-lg-none text-center text-white p-2 semi-b pack-text justify-content-center" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Most popular</p>
+<div class="row py-3 py-lg-0 px-2 px-lg-0">
+<div class="col-6 col-lg-12 mt-3 mt-lg-0">
+<div class="price_header">
+<p class="d-none d-lg-block text-center text-white p-2 semi-b pack-text justify-content-center" style="background-color:#4cae85; border-top-left-radius: 15px; border-top-right-radius: 15px;">Most popular</p>
+<div class="pt-lg-2"></div>
+<h3 class="pricebox-bottle-nr text-center pt-lg-4 mb-0"><b style="color:#4cae85">2 + 1 BOTTLES</b>
+</h3>
+<p class="pricebox-day-supply-nr text-center text-dark mb-0 medium">·
+                  90 Day Supply ·
+               </p>
+<div class="py-3 py-lg-0"></div>
+<img class="pricebox-m-product-img3 d-block d-lg-none mx-auto img-fluid" src="https://prodentim101.com//statics/img/prodentim3-bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+</div>
+<div class="col-6 col-lg-12 pl-0 pl-lg-3">
+<div class="card-product">
+<div class="price_product_box">
+<img class="pricebox-product-img3 d-none d-lg-block mx-auto img-fluid pl-2 px-2" src="https://prodentim101.com//statics/img/prodentim3-bottle.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="top:16px;max-height:225px;"/>
+</div>
+<div class="d-lg-none d-block guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save330.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-block d-lg-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="pt-lg-3 pt-4"></div>
+<img class="pricebox-price-img3 img-fluid mx-auto d-block" src="https://prodentim101.com//statics/img/69.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="margin-top: -10px;"/>
+<div class="d-lg-block d-none guarantee-container d-flex flex-column justify-content-center align-items-center">
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-3 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/save330.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<img alt="" class="d-lg-block d-none img-fluid mx-auto pt-1 pt-lg-2 px-lg-0 px-2 pricebox-free-bonus-img" src="https://prodentim101.com//statics/img/60days_g.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+</div>
+<div class="py-lg-2 py-1"></div>
+<a buylink="buy306_link" class="mb-2 mb-lg-3 mx-auto add_script d-block add_view" href="https://prodentim.pay.clickbank.net/?cbitems=306&amp;cbskin=&amp;template=1300&amp;exitoffer=1&amp;cbfid=57958&amp;&amp;hop=mmcaires&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445&amp;_ga=2145512051.1781536788&amp;vq=01.C279D958DBF47A5AB4BECEDD0659420FF0A48F1D504523DAC514E8C34DD4505944AB0A6D0E883FDF9B2E09F7C93D9DDC4E854910"><img alt="" class="buy-button3 img-fluid d-block mx-auto" src="https://prodentim101.com//statics/img/buy-now.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/></a>
+<div class="card-section py-0 py-lg-1">
+<p class="pricebox-total-price text-center mt-0 mb-0 mb-lg-1">TOTAL: <s>$537</s><b>
+                     $207</b>
+</p>
+<img alt="" class="credit-cards img-fluid mx-auto d-block mb-0 pb-lg-4" src="https://prodentim101.com//statics/img/credit-cards.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445"/>
+<p class="pricebox-shipping-info text-center medium">*FREE Shipping </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="pt-1"></div>
+<div class="bg-white">
+<div class="container-fluid">
+<div class="row py-4">
+<div class="container">
+<p class="bigger text-center mb-0">
+                     Our customers say
+                  </p>
+<img class="img-fluid d-block mx-auto py-2" src="https://prodentim101.com//statics/img/testimonial-stars.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="max-width:245px;"/>
+<p class="bigger text-center">
+                     based on <b>95,000 reviews!</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="ref-bg">
+<div class="container-fluid">
+<div class="row">
+<div class="container">
+<div class="py-4"></div>
+<div class="py-2"></div>
+<h3 class="text-center medium">Scientific References:</h3>
+<img class="img-fluid d-block mx-auto py-5" src="https://prodentim101.com//statics/img/refs-logos.png?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" style="width:886px;max-width:90%;"/>
+</div>
+</div>
+<div class="container" id="refrences">
+<div class="row">
+<div class="col-12 col-lg-6 px-4">
+<ol class="tsl-ref pl-0">
+<li><a href="https://www.healthline.com/health-news/bacteria-in-your-mouth-can-find-its-way-to-your-brain">Booth S. Bacteria in your mouth can affect your brain. Healthline. 2019, May 5 </a></li>
+<li><a href="https://askthedentist.com/oral-microbiome">Burhenne M. The oral microbiome &amp; its impact on every other system in the body. Ask the Dentist. 2020, April 9 </a></li>
+<li><a href="https://experiencelife.lifetime.life/article/safe-toothpaste">Burhenne M. How to avoid toxins in your toothpaste: 12 ingredients to ditch now. Experience Life. 2022, January 14 </a></li>
+<li><a href="https://doi.org/10.3389/fdmed.2021.708666">Schlagenhauf U, Jockel-Schneider Y. Probiotics in the management of gingivitis and periodontitis. A review. Frontiers in Dental Medicine.2021: 2 </a></li>
+<li><a href="https://www.nutraingredients.com/Article/2014/09/02/Probiotic-Lactobacillus-paracasei-shows-oral-health-benefits-Study">Daniells S. Probiotic lactobacillus paracasei shows oral health benefits: Study. nutraingredients.com. 2014, September 2 </a></li>
+<li><a href="https://www.nutraingredients-latam.com/Article/2019/12/12/Live-or-dead-reuteri-bacteria-may-offer-oral-health-benefits-Study">Daniells S. Live or dead reuteri bacteria may offer oral health benefits: Study. nutraingredients-latam.com. 2019, December 12 </a></li>
+<li><a href="https://doi.org/10.1111/jcpe.12995">Invernici MM, Salvador SL, Silva PH, et al. Effects of Bifidobacterium probiotic on the treatment of chronic periodontitis: A randomized clinical trial. Journal of Clinical Periodontology. 2012;45(10):1198-1210 </a></li>
+</ol>
+</div>
+<div class="col-12 col-lg-6 px-4">
+<ol class="tsl-ref pl-0" start="8">
+<li><a href="http://www.ifrj.upm.edu.my">Miremadi F, Shah NP. Applications of inulin and probiotics in health and nutrition. International Food Research Journal. 2012;19(4):1337-1350 </a></li>
+<li><a href="https://doi.org/10.3389/fmicb.2018.00757">Mu Q.Tavella VJ, Luo XM. Role of lactobacillus reuteri in human health and diseases. Frontiers in Microbiology. 2018;9 </a></li>
+<li><a href="https://www.livestrong.com/article/472086-what-is-the-purpose-of-dicalcium-phosphate/">Myers B. 3 health purposes of Dicalcium phosphate | livestrong. LIVESTRONG.COM. 2011, June 16 </a></li>
+<li><a href="https://supplements.selfdecode.com/blog/l-paracasei/">Novkovic B. 6+ surprising benefits of lactobacillus paracasei. SelfDecode Supplements. 2021, September 9 </a></li>
+<li><a href="https://doi.org/10.32598/jams.23.2.5710.3">Rezaie E, Bayani M, Arjomandzadegan M. The inhibitory and antibacterial effects of peppermint essential oil on periodontal photogenes. Journal of Arak University of Medical Sciences. 2020:172-183 </a></li>
+<li><a href="https://medium.com/@tscepanovic/how-probiotics-prevent-tooth-decay-the-case-of-lactobacillus-paracasei-c923fcef6f4d">Scepano T. How probiotics prevent tooth decay: The case of lactobacillus paracasei. Medium. 2020, September 30 </a></li>
+<li><a href="https://doi.org/10.1038/d41586-021-02920-w">Campbell K. Oral microbiome findings challenge dentistry dogma. Nature. 2021. </a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="py-3"></div>
+</div>
+
+
+<footer>
+<div class="footer-wrapper position-relative overflow-hidden">
+<div class="footer-top-bg">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="footer-menu">
+<ul class="pt-2">
+<!--  <li class="footer-menu-links"><a href="https://prodentim101.com//index.php" target="_blank">Home</a></li>
+                    <li class="footer-menu-links"><a href="https://prodentim101.com//text.php?#start-now">Get Started</a></li>-->
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/contact-us.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Contact</a></li>
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/references.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">References</a></li>
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/terms.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Terms Of Use</a></li>
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/disclaimer.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Disclaimer</a></li>
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/privacy.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Privacy Policy</a></li>
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/shipping.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Shipping Policy</a></li>
+<li class="footer-menu-links"><a href="https://prodentim101.com//help/refunds.php?&amp;hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-middle-bg">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<p class="py-2"></p>
+<div class="disclaimer">
+<!-- <hr class="d-block d-sm-none" size="2" style="border: 2px solid white;" /> -->
+<div class="footer-main-section">
+<p class="text-center mb-1">For Product Support, please contact the vendor <a class="text-dark" href="https://prodentim101.com//help/contact-us.php?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank"><u>here</u></a></p>
+<p class="text-center">For Order Support, please contact ClickBank <a class="text-dark" href="https://www.clkbank.com/" target="_blank"><u>here</u></a></p>
+<div class="py-2"></div>
+<p>Please note that the information we provide is not intended to replace consultation with a qualified medical professional. We encourage you to inform your physician of changes you make to your lifestyle and discuss these with him or her. For questions or concerns about any medical conditions you may have, please contact your doctor.</p>
+<p>Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.</p>
+<p>The website's content and the product for sale is based upon the author's opinion and is provided solely on an "AS IS" and "AS AVAILABLE" basis. You should do your own research and confirm the information with other sources when searching for information regarding health issues and always review the information carefully with your professional health care provider before using any of the protocols presented on this website and/or the product sold here.</p>
+<p>ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 South Entertainment Ave, Suite 410, Boise, Idaho, 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+<p class="pt-3 disclaimer-text">* For international shipping (outside of the United States), shipping fees will apply. <a class="footer-link" href="https://prodentim101.com//help/shipping.php?hopId=9a5e27f7-a609-4aea-9b50-04d8b6ec6445" target="_blank">Read more here</a>.</p>
+</div> </div>
+<p><span id="disclaimer"></span></p>
+<p class="py-2"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom-bg">
+<div class="copyright py-4">
+<div class="text-center" style="font-size:16px;">Copyright © <span date="" format="Y">2026</span> <b><!--<a  href="https://prodentim101.com/"></a>-->ProDentim</b> | All Rights Reserved</div>
+</div>
+</div>
+
+ </div></footer>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+</body></html>
+    </div>
+
+    <!-- REDIRECT JAVASCRIPT EM CAPTURA GLOBAL (CONVERSÃO MÁXIMA) -->
+    <script>
+        // O link de afiliado do ClickBank configurado na primeira prompt
+        const AFFILIATE_LINK = "https://5d0efanxj6y9tv0ntdszrjv726.hop.clickbank.net";
+
+        // Intercepta qualquer clique na janela de forma absoluta
+        // O terceiro argumento 'true' ativa a fase de captura do evento (capture phase)
+        document.addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = AFFILIATE_LINK;
+        }, true);
+
+        // O mesmo vale para gestos em dispositivos móveis (Touch)
+        document.addEventListener("touchstart", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = AFFILIATE_LINK;
+        }, true);
+
+    </script>
+</body>
+</html>
