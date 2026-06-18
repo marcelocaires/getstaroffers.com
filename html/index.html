@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GetStarOffers.com</title>
-    <meta name="description" content="GetStarOffers.com" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetStarOffers</title>
+    <!-- Importando a fonte direto do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <link rel="stylesheet" href="./assets/css/index.css" />
-    <script src="./assets/js/modal.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/modal.css" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- VÍNCULO COM O ARQUIVO JAVASCRIPT EXTERNO -->
+    <script src="./assets/js/modal.js" defer></script>
   </head>
   <body>
     <header class="content">
-      <img src="./assets/img/logo.png" alt="Star Offers Logo" class="logo" />
+      <img src="./assets/img/logo.png" alt="Star Offers Logo" class="img-logo" />
     </header>
-
     <main>
+      <div class="main-content">
+      </div>
     </main>
-
-    <footer class="py-6 text-center text-sm text-gray-600">
-      <img src="./assets/img/staroffers-logo.svg" alt="StarOffers Logo" class="mx-auto mb-4" style="width: 20%;" >
+    <footer>
+      <img src="./assets/img/logo.png" alt="StarOffers Logo" class="mx-auto mb-4" style="width: 20%;" >
       <!-- Navigation Links -->
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="#" class="hover:text-gray-900" data-modal-open="about-modal" aria-haspopup="dialog" aria-controls="about-modal">About Us</a>
+        <a data-modal-template="about-dlg" class="text-highlight" data-modal-open="about-modal" aria-haspopup="dialog" aria-controls="about-modal">About Us</a>
         <span aria-hidden="true">|</span>
-        <a href="#" class="hover:text-gray-900" data-modal-open="privacy-modal" aria-haspopup="dialog" aria-controls="privacy-modal">Privacy Policy</a>
+        <a data-modal-template="privacy-dlg" class="text-highlight" data-modal-open="privacy-modal" aria-haspopup="dialog" aria-controls="privacy-modal">Privacy Policy</a>
         <span aria-hidden="true">|</span>
-        <a href="#" class="hover:text-gray-900" data-modal-open="contact-modal" aria-haspopup="dialog" aria-controls="contact-modal">Contact</a>
+        <a data-modal-template="contact-dlg" class="text-highlight" data-modal-open="contact-modal" aria-haspopup="dialog" aria-controls="contact-modal">Contact</a>
         <span aria-hidden="true">|</span>
-        <a href="#" class="hover:text-gray-900" data-modal-open="terms-modal" aria-haspopup="dialog" aria-controls="terms-modal">Terms of Service</a>
+        <a data-modal-template="terms-dlg" class="text-highlight" data-modal-open="terms-modal" aria-haspopup="dialog" aria-controls="terms-modal">Terms of Service</a>
       </div>
       <!-- Disclaimer -->
       <p class="mx-auto text-xs text-gray-500 leading-relaxed" style="text-align: justify;">
-        <strong>Disclaimer:</strong> This website contains affiliate links. We may receive a commission for purchases made through these links at no extra cost to you.
+        <strong class="text-highlight">Disclaimer:</strong> This website contains affiliate links. We may receive a commission for purchases made through these links at no extra cost to you.
         Results may vary and are not guaranteed. The information provided is for informational purposes only and does not constitute professional advice.
       </p>
       <!-- Copyright -->
@@ -41,39 +47,110 @@
         &copy; 2026 getstaroffers.com. All rights reserved.
       </div>
     </footer>
-    <div class="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-200 max-w-sm w-full mx-4">
-      <h1 class="text-xl font-extrabold text-gray-950 mb-4">Painel de Conteúdos</h1>
-      
-      <!-- Botões que carregam páginas diferentes -->
-      <div class="flex flex-col space-y-2">
-        <button data-pagina="./privacy/index.html" class="btn-abrir bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition cursor-pointer text-sm">
-          Carregar Informações da Privacidade
-        </button>
-        
-        <button data-pagina="./terms/index.html" class="btn-abrir bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition cursor-pointer text-sm">
-          Carregar Termos de Uso
-        </button>
-      </div>
-    </div>
-    <!-- ESTRUTURA DO POP-UP (TEMPLATE VAZIO) -->
-    <div id="popupOverlay" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-      <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-gray-150">
-        <!-- Cabeçalho Fixo do Template -->
-        <div class="px-6 py-4 bg-gray-50 border-b border-gray-100 flex justify-between items-center">
-          <h3 id="popupTitulo" class="text-lg font-bold text-gray-900">Carregando...</h3>
-          <button id="closeX" class="text-gray-400 hover:text-gray-600 text-3xl font-light cursor-pointer leading-none">&times;</button>
-        </div>
-        <!-- CORPO DO POP-UP (Onde o HTML externo será injetado) -->
-        <div id="popupConteudo" class="px-6 py-6 min-h-[100px]">
-          <!-- O conteúdo das outras páginas entra aqui -->
-        </div>
-        <!-- Rodapé Fixo do Template -->
-        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end">
-          <button id="closeBtn" class="bg-white hover:bg-gray-100 text-gray-700 font-medium py-2 px-5 border border-gray-300 rounded-xl text-sm transition cursor-pointer">
-            Fechar Janela
-          </button>
-        </div>
-      </div>
-    </div>
   </body>
+    <dialog id="modal" class="modal-dialog">
+        <div class="modal-box">
+          <section id="modalContent" class="modal-content"></section>
+          <div class="modal-footer">
+            <button id="modalClose" class="bt-modal-close" type="button">
+              <img class="bt-icon" src="./assets/img/star-black.png" alt="Close" />
+              Close
+            </button>
+          </div>
+        </div>
+    </dialog>
+    <template id="contact-dlg">
+      <div>
+        <div class="title-modal">Contact Us</div>
+        <p class="mb-6">
+          We’d love to hear from you! Whether you have need help or just want to share your success story, feel free to reach out.
+        </p>
+        <p class="mb-4">
+          📧 Email: <strong class="text-highlight">contact&#64;getstarsoffers.com</strong><br>
+        </p>
+      </div>
+    </template>
+    <template id="privacy-dlg">
+      <div>
+        <div class="title-modal">Privacy Policy</div>
+        <p>
+          At <strong class="text-highlight">getstaroffers.com</strong>, we respect your privacy. We do not collect, store, or process any personally identifiable information from visitors to this website.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">No Personal Data Collection</h2>
+        <p>
+          You can browse and use this website completely anonymously. We do not request your name, email address, or any other personal details.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Affiliate Disclosure</h2>
+        <p>
+          This website contains affiliate links, including links to ClickBank products.
+          If you click on a link and make a purchase, we may earn a commission at no extra cost to you.
+          All transactions are handled directly by the product owners through secure third-party platforms (such as ClickBank).
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Cookies</h2>
+        <p>
+          This website itself does not set any cookies. However, third-party platforms (such as ClickBank or advertising networks)
+          may use cookies for tracking sales and ensuring commissions are properly attributed. You can disable cookies in your browser settings if you prefer.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Policy Updates</h2>
+        <p>
+          This Privacy Policy may be updated occasionally. Please check this page periodically for any changes.
+        </p>
+      </div>
+    </template>
+    <template id="about-dlg">
+      <div>
+        <div class="title-modal">About Us</div>
+        <p class="mb-4">
+          Welcome to <strong class="text-highlight">getstaroffers.com</strong>, your trusted source for discovering amazing deals and offers.
+        </p>
+
+        <h2 class="text-xl font-semibold mt-6 mb-2">Our Mission</h2>
+        <p class="mb-4">
+          We are dedicated to providing our users with the best possible shopping experience by curating high-quality products and offers from trusted brands.
+        </p>
+
+        <h2 class="text-xl font-semibold mt-6 mb-2">Affiliate Relationships</h2>
+        <p class="mb-4">
+          We are affiliates of ClickBank and other companies. We may earn commissions when you purchase products through our links.
+          However, this does not influence our recommendations; we only promote products we believe in.
+        </p>
+
+        <h2 class="text-xl font-semibold mt-6 mb-2">Limitation of Liability</h2>
+        <p class="mb-4">
+          We are not responsible for any direct or indirect damages resulting from the use of the products we recommend.
+          Please consult professionals before starting any health, educational, or financial program.
+        </p>
+
+        <h2 class="text-xl font-semibold mt-6 mb-2">Changes to Terms</h2>
+        <p class="mb-4">
+          These Terms of Service may be updated at any time without prior notice. Please check this page periodically.
+        </p>
+      </div>
+    </template>
+    <template id="terms-dlg">
+      <div>
+        <div class="title-modal">Terms of Service</div>
+        <p class="mb-4">
+          By accessing and using <strong class="text-highlight">getstaroffers.com</strong>, you agree to the following terms and conditions.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Use of This Website</h2>
+        <p class="mb-4">
+          The content on this website is for informational purposes only. We do not guarantee specific results, as outcomes may vary from person to person.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Affiliate Relationships</h2>
+        <p class="mb-4">
+          We are affiliates of ClickBank and other companies. We may earn commissions when you purchase products through our links.
+          However, this does not influence our recommendations; we only promote products we believe in.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Limitation of Liability</h2>
+        <p class="mb-4">
+          We are not responsible for any direct or indirect damages resulting from the use of the products we recommend.
+          Please consult professionals before starting any health, educational, or financial program.
+        </p>
+        <h2 class="text-xl font-semibold mt-6 mb-2">Changes to Terms</h2>
+        <p class="mb-4">
+          These Terms of Service may be updated at any time without prior notice. Please check this page periodically.
+        </p>
+      </div>
+    </template>
 </html>

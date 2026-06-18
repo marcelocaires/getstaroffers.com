@@ -1,8 +1,15 @@
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+@font-face {
+  font-family: 'Poetsen One';
+  src: url('assets/fonts/poetsen.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
+body {
+  font-family: 'Poetsen One', sans-serif;
+}
+
 header.content{
   display: flex;
   align-items: center;
@@ -12,117 +19,50 @@ header.content{
   height: 65px;
 }
 img{
-    height: 65px;
+  height: 65px;
 }
-button{
-    background-color: #daaf3e;
-    width: 12vw;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    font-style: italic;
-    cursor: pointer;
-    font-size: 20px;
-}
-button:hover{
-    background-color: #c49736;
+.img-logo{
+  height:inherit;
 }
 footer{
-    width: 75vw;
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
+  width: 75vw;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  padding: 20px;
 }
 a{
   color: #DAAF3E;
   cursor: pointer;
 }
 main{
-    display: block;
-    background-image: url(../img/background.svg);
-    background-size: 100vw;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: calc(100vh - 65px - 200px);
-}
-
-[data-modal-hidden="true"] {
-    display: none;
-}
-
-body.modal-open {
-    overflow: hidden;
-}
-
-/* Basic fallback styles for the modal components (when Tailwind isn't present) */
-section[role="dialog"] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-section[role="dialog"] > div[role="presentation"] {
-    /* noop: keep specificity if other wrappers use role */
-}
-
-section[role="dialog"] .relative {
-    background: #fff;
-    border-radius: 1rem;
-    padding: 1.25rem;
-    box-shadow: 0 20px 50px rgba(2,6,23,0.15);
-    max-width: 48rem;
-}
-
-/* fallback for close button */
-[data-modal-close] {
-    cursor: pointer;
-}
-h1,strong{
-  color: #daaf3e;;
-}
-p{
-  text-align: justify;
-  font-weight: lighter;
-  padding-top: 5px;
-  font-size: 0.8em;
-}
-main{
-  padding:20px;
-}
-button{
-  background-color: #daaf3e;
-  color: #000;
-  padding: 10px;
-  height: 40px;
-  border-radius: 5px;
-  border: none;
+  display: block;
+  background-image: url(../img/background.svg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: calc(100vh - 65px - 200px);
   display: flex;
-  align-items: center;
   align-content: center;
-  justify-content: center;
-  font-style: italic;
-  cursor: pointer;
-  font-size: 20px;
-  >img{
-    height: 20px;
-  }
-}
-button:hover{
-  background-color: #c49736;
-}
-.buttons{
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 15px;
+}
+.main-content{
+  padding: 20px;
+  margin: 0 auto;
+  width: 75vw;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: url(../img/getstaroffers-logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.text-highlight{
+    color: #daaf3e;
+    font-weight: bold;
 }

@@ -1,0 +1,8 @@
+services:
+  getstaroffers.com:
+    build: .
+    ports:
+      - "80:80"
+
+
+#docker compose -f docker-compose.dev.yml up -d
