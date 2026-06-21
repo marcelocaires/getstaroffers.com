@@ -1,22 +1,19 @@
 services:
   getstaroffers:
-    build: .
+    image: nginx:alpine
     container_name: getstaroffers
     restart: unless-stopped
 
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.staroffers.rule=Host(`getstaroffers.com`) || Host(`www.getstaroffers.com`)"
-      - "traefik.http.routers.staroffers.entrypoints=websecure"
-      - "traefik.http.routers.staroffers.tls=true"
-      - "traefik.http.routers.staroffers.tls.certresolver=letsencrypt"
-      - "traefik.http.services.staroffers.loadbalancer.server.port=80"
-
-      - "traefik.http.routers.staroffers-http.rule=Host(`getstaroffers.com`) || Host(`www.getstaroffers.com`)"
-      - "traefik.http.routers.staroffers-http.entrypoints=web"
-      - "traefik.http.routers.staroffers-http.middlewares=redirect-to-https"
-
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.getstaroffers.rule=Host(`getstaroffers.com`) || Host(`www.getstaroffers.com`)"
+      - "traefik.http.routers.getstaroffers.entrypoints=websecure"
+      - "traefik.http.routers.getstaroffers.tls=true"
+      - "traefik.http.routers.getstaroffers.tls.certresolver=letsencrypt"
+      - "traefik.http.services.getstaroffers.loadbalancer.server.port=80"
 
     networks:
       - web
