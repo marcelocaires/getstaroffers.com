@@ -38,7 +38,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18264052122');
     </script>
     <style>
@@ -1774,24 +1773,39 @@ h2.tsl{
 
     <!-- REDIRECT JAVASCRIPT EM CAPTURA GLOBAL (CONVERSÃO MÁXIMA) -->
     <script>
-        // O link de afiliado do ClickBank configurado na primeira prompt
-        const AFFILIATE_LINK = "https://5d0efanxj6y9tv0ntdszrjv726.hop.clickbank.net";
+      const AFFILIATE_LINK = "https://5d0efanxj6y9tv0ntdszrjv726.hop.clickbank.net";
+      const CONVERSION_TAG = 'AW-18264052122/EzbtCLPiyskcEJqj_YRE';
 
-        // Intercepta qualquer clique na janela de forma absoluta
-        // O terceiro argumento 'true' ativa a fase de captura do evento (capture phase)
-        document.addEventListener("click", function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            window.location.href = AFFILIATE_LINK;
-        }, true);
+      let redirected = false;
 
-        // O mesmo vale para gestos em dispositivos móveis (Touch)
-        document.addEventListener("touchstart", function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            window.location.href = AFFILIATE_LINK;
-        }, true);
+      function gtag_report_conversion(url) {
 
+          if (redirected) return false;
+          redirected = true;
+
+          var callback = function () {
+              if (typeof(url) !== 'undefined') {
+                  window.location = url;
+              }
+          };
+
+          gtag('event', 'conversion', {
+              'send_to': CONVERSION_TAG,
+              'transaction_id': '',
+              'event_callback': callback
+          });
+
+          return false;
+      }
+
+      function redirectToOffer(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return gtag_report_conversion(AFFILIATE_LINK);
+      }
+
+      document.addEventListener("click", redirectToOffer, true);
+      document.addEventListener("touchstart", redirectToOffer, true);
     </script>
 </body>
 </html>
