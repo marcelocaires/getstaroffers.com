@@ -1779,21 +1779,37 @@ h2.tsl{
       let redirected = false;
 
       function gtag_report_conversion(url) {
+          if (redirected) {
+              return false;
+          }
 
-          if (redirected) return false;
-          redirected = true;
+          var redirect = function () {
+              if (redirected) {
+                  return;
+              }
 
-          var callback = function () {
-              if (typeof(url) !== 'undefined') {
-                  window.location = url;
+              redirected = true;
+
+              if (typeof url !== 'undefined' && url) {
+                  window.location.href = url;
               }
           };
 
-          gtag('event', 'conversion', {
-              'send_to': CONVERSION_TAG,
-              'transaction_id': '',
-              'event_callback': callback
-          });
+          try {
+              gtag('event', 'conversion', {
+                  'send_to': CONVERSION_TAG,
+                  'transaction_id': '',
+                  'event_callback': redirect,
+                  'event_timeout': 1000
+              });
+
+              // Fallback: redireciona mesmo que o Google não chame o callback.
+              setTimeout(redirect, 1200);
+
+          } catch (error) {
+              console.error('Erro ao registrar conversão:', error);
+              redirect();
+          }
 
           return false;
       }
