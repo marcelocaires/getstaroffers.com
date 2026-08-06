@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genius Switch</title>
+  <!-- Importação do Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+    /* Desfoca o fundo quando o popup está ativo */
+    .blur-background {
+        filter: blur(6px);
+        pointer-events: none;
+        user-select: none;
+    }
+    .text-shadow-sm {
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body class="bg-[#f3faf7] text-slate-800 font-sans antialiased relative min-h-screen">
+  <!-- Overlay/Fundo Esmaecido -->
+  <div>
+    <div id="cookiePopup" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-[4px] transition-all duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden relative border border-slate-100 flex flex-col transform scale-100 transition-transform duration-300">
+            <!-- Barra superior fina com gradiente Magenta/Rosa do print -->
+            <div class="h-1.5 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"></div>
+            
+            <div class="p-8 text-center flex flex-col items-center">
+                <h3 class="text-2xl font-bold text-slate-800 tracking-tight mb-3">Cookie Policy</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                    This site uses cookies to customize content and ads, provide social media resources and analyze our traffic. By clicking "Allow", you agree to the use of cookies. For more information, visit our Cookie Policy.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mb-4">
+                    <button class="bg-[#00a877] text-white hover:bg-[#009166] font-semibold py-3 px-8 rounded-lg transition duration-200 text-sm shadow-md shadow-emerald-100 w-full sm:w-auto min-w-[130px]">
+                        Allow
+                    </button>
+                    <button class="bg-[#f0f4f8] text-slate-600 hover:bg-[#e1e8f0] font-semibold py-3 px-8 rounded-lg transition duration-200 text-sm border border-slate-200 w-full sm:w-auto min-w-[130px]">
+                        Close
+                    </button>
+                </div>
+                <span class="text-[10px] text-slate-400">Your privacy is important to us</span>
+            </div>
+        </div>
+    </div>
+    <!-- CONTEÚDO DA PÁGINA (CLONE DO PRODENTIM) -->
+    <!-- Aplicada a classe de desfoque por padrão para emular o preview bloqueado pelo popup -->
+    <div id="pageContent" class="blur-background">
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anima App</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+      tailwind.config = {
+        content: [],
+        theme: {
+          extend: {
+            fontFamily: {
+              lora: ["Lora", "serif"],
+              open_sans: ["Open Sans", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<style>
+      @font-face {
+        font-family: "Inter";
+        src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+          format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+    </style>
+<meta content="Anima App" property="og:title"/><meta content="website" property="og:type"/><meta content="Activate Your Genius Switch (90-Day Money Back Guarantee)" property="og:description"/><meta content="Activate Your Genius Switch (90-Day Money Back Guarantee)" name="description"/><meta content="https://c.animaapp.com/mshne48igSKlHv/snapshot.jpg" property="og:image"/><meta content="Anima App" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><script src="/load.js"></script><script src="/static/anima.min.js" type="module"></script></head>
+<body class="text-black text-base not-italic normal-nums font-normal accent-auto bg-white box-border caret-transparent block tracking-[normal] leading-[normal] list-outside list-none outline-[3px] pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-lora">
+<span class="box-border caret-transparent hidden outline-[3px]"></span>
+<div class="fixed bg-white box-border caret-transparent hidden h-full outline-[3px] w-full z-[999] overflow-hidden"></div>
+<div class="absolute box-border caret-transparent h-px left-[-9999px] outline-[3px] top-[-9999px] w-px overflow-hidden">
+<img alt="" class="box-border caret-transparent inline h-px max-w-full outline-[3px] align-baseline w-px" src="https://geniusswitchoriginal.com/images/sec1.jpg"/>
+<img alt="" class="box-border caret-transparent inline h-px max-w-full outline-[3px] align-baseline w-px" src="https://geniusswitchoriginal.com/images/sec1-mob.jpg"/>
+</div>
+<div class="box-border caret-transparent outline-[3px] overflow-hidden">
+<div class="bg-[url('https://geniusswitchoriginal.com/images/vsl-sec1.jpg')] bg-no-repeat box-border caret-transparent float-left outline-[3px] w-full bg-[position:50%_top] pt-6 pb-9">
+<div class="box-border caret-transparent max-w-screen-sm outline-[3px] w-full mx-auto px-2.5 md:max-w-none md:w-[970px] md:px-0">
+<p class="text-white text-3xl font-bold box-border caret-transparent leading-[42px] outline-[3px] text-center mt-0.5 pb-1 px-[5px] md:text-[57px] md:leading-[70px] md:text-start md:mt-0 md:pb-0 md:px-0">
+            Genius Switch
+            <br class="text-3xl box-border caret-transparent block leading-[42px] outline-[3px] text-center md:text-[57px] md:hidden md:leading-[70px] md:text-start"/>
+            Is Finally
+            <br class="text-3xl box-border caret-transparent leading-[42px] outline-[3px] text-center md:text-[57px] md:leading-[70px] md:text-start"/>
+<span class="text-3xl box-border caret-transparent leading-[42px] outline-[3px] text-center md:text-[57px] md:leading-[70px] md:text-start">HERE!</span>
+</p>
+<br class="box-border caret-transparent outline-[3px]"/>
+<p class="box-border caret-transparent outline-[3px]">
+<font class="text-white text-[32px] box-border caret-transparent outline-[3px]" size="6"></font>
+</p>
+<ul class="box-border caret-transparent list-disc outline-[3px] pl-0">
+<font class="text-white text-[32px] box-border caret-transparent outline-[3px]" size="6"><li class="box-border caret-transparent list-none outline-[3px]">
+                * Genius Switch Audio Series!
+              </li>
+<li class="box-border caret-transparent list-none outline-[3px]">
+                * Rev Up Your Brain Power..
+              </li>
+<li class="box-border caret-transparent list-none outline-[3px]">
+                * Only $39 today!
+              </li>
+</font>
+</ul>
+<font class="text-white text-[32px] box-border caret-transparent outline-[3px]" size="6"></font>
+<p class="box-border caret-transparent outline-[3px]"></p>
+</div>
+</div>
+<div class="box-border caret-transparent float-left outline-[3px] w-full my-[70px]">
+<div class="box-border caret-transparent max-w-screen-sm outline-[3px] w-full mx-auto px-2.5 md:max-w-none md:w-[970px] md:px-0">
+<div class="bg-amber-50 box-border caret-transparent outline-[3px] border-orange-200 rounded-2xl border-2 border-solid">
+<div class="bg-amber-100 box-border caret-transparent outline-[3px] pt-1.5 pb-0 px-2.5 rounded-t-[14px] md:pt-2.5 md:pb-1.5 md:px-5">
+<p class="text-teal-950 text-[23px] font-bold box-border caret-transparent leading-[30px] outline-[3px] text-center md:text-[44px] md:leading-[54px]">
+                Activate Your Genius Switch<br class="text-[23px] box-border caret-transparent leading-[30px] outline-[3px] md:text-[44px] md:leading-[54px]"/>
+
+                (90-Day Money Back Guarantee)
+              </p>
+</div>
+<img alt="" class="box-border caret-transparent max-w-full outline-[3px] align-baseline mx-auto" src="https://geniusswitchoriginal.com/images/vsls2bxarw.jpg"/>
+<div class="box-border caret-transparent outline-[3px] pb-5 px-[15px] md:pb-[30px] md:px-[30px]">
+<img alt="" class="aspect-[auto_694_/_473] box-border caret-transparent h-auto max-w-full outline-[3px] align-baseline w-[694px] mt-2.5 mx-auto md:h-[473px]" src="https://geniusswitchoriginal.com/images/vsls2prd.png"/>
+<ul class="box-border caret-transparent table list-disc outline-[3px] w-full mx-auto pl-0 pt-[15px] md:w-[89%]">
+<li class="relative bg-violet-500 box-border caret-transparent block float-left list-none outline-[3px] w-[33.33%] pt-[7px] pb-2 px-2.5 rounded-l-[14px] md:pl-[98px] md:pr-5 md:py-2.5">
+<img alt="" class="absolute aspect-[auto_54_/_57] box-border caret-transparent hidden h-[35px] max-w-full outline-[3px] align-baseline w-auto left-2.5 top-[15px] md:block md:h-[57px] md:w-[54px] md:left-[30px] md:top-2.5" src="https://geniusswitchoriginal.com/images/vsls2bx-icon1.png"/>
+<p class="text-white text-[15px] font-bold box-border caret-transparent leading-[21px] outline-[3px] text-center md:text-2xl md:leading-[30px] md:text-left">
+                    Special
+                    <br class="text-[15px] box-border caret-transparent leading-[21px] outline-[3px] text-center md:text-2xl md:leading-[30px] md:text-left"/>
+                    Discount
+                  </p>
+</li>
+<li class="relative bg-blue-400 box-border caret-transparent block float-left list-none outline-[3px] w-[33.33%] pt-[7px] pb-2 px-2.5 md:pl-[98px] md:pr-5 md:py-2.5">
+<img alt="" class="absolute aspect-[auto_42_/_57] box-border caret-transparent hidden h-[35px] max-w-full outline-[3px] align-baseline w-auto left-3.5 top-[15px] md:block md:h-[57px] md:w-[42px] md:left-[37px] md:top-2.5" src="https://geniusswitchoriginal.com/images/vsls2bx-icon2.png"/>
+<p class="text-white text-[15px] font-bold box-border caret-transparent leading-[21px] outline-[3px] text-center md:text-2xl md:leading-[30px] md:text-left">
+                    Instant
+                    <br class="text-[15px] box-border caret-transparent leading-[21px] outline-[3px] text-center md:text-2xl md:leading-[30px] md:text-left"/>
+                    Access
+                  </p>
+</li>
+<li class="relative bg-teal-500 box-border caret-transparent block float-left list-none outline-[3px] w-[33.33%] pt-[7px] pb-2 px-2.5 rounded-r-[14px] md:pl-[98px] md:pr-5 md:py-2.5">
+<img alt="" class="absolute aspect-[auto_54_/_57] box-border caret-transparent hidden h-[35px] max-w-full outline-[3px] align-baseline w-auto left-2.5 top-[15px] md:block md:h-[57px] md:w-[54px] md:left-[30px] md:top-2.5" src="https://geniusswitchoriginal.com/images/vsls2bx-icon3.png"/>
+<p class="text-white text-[15px] font-bold box-border caret-transparent leading-[21px] outline-[3px] text-center md:text-2xl md:leading-[30px] md:text-left">
+                    Quick Start
+                    <br class="text-[15px] box-border caret-transparent leading-[21px] outline-[3px] text-center md:text-2xl md:leading-[30px] md:text-left"/>
+                    Bonuses
+                  </p>
+</li>
+</ul>
+<p class="text-neutral-700 text-base box-border caret-transparent leading-[26px] outline-[3px] text-center mt-5 md:text-[22px] md:leading-8 md:mt-[30px]">
+                Regular Price:
+                <span class="relative text-base box-border caret-transparent leading-[26px] outline-[3px] mx-0.5 px-0.5 md:text-[22px] md:leading-8 md:px-[5px] after:accent-auto after:border-b-red-600 after:border-l-neutral-700 after:border-r-neutral-700 after:border-t-neutral-700 after:caret-transparent after:text-neutral-700 after:block after:text-base after:not-italic after:normal-nums after:font-normal after:tracking-[normal] after:leading-[26px] after:list-outside after:list-none after:mt-[-0.96px] after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:rotate-[-9.999987517730313deg] after:visible after:border-b after:border-separate after:top-[54%] after:inset-x-0 after:font-lora after:md:text-[22px] after:md:leading-8 after:md:mt-[-1.32px] after:md:border-b-2">$200</span>
+<span class="relative text-base box-border caret-transparent leading-[26px] outline-[3px] mx-0.5 px-0.5 md:text-[22px] md:leading-8 md:px-[5px] after:accent-auto after:border-b-red-600 after:border-l-neutral-700 after:border-r-neutral-700 after:border-t-neutral-700 after:caret-transparent after:text-neutral-700 after:block after:text-base after:not-italic after:normal-nums after:font-normal after:tracking-[normal] after:leading-[26px] after:list-outside after:list-none after:mt-[-0.96px] after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:rotate-[-9.999987517730313deg] after:visible after:border-b after:border-separate after:top-[54%] after:inset-x-0 after:font-lora after:md:text-[22px] after:md:leading-8 after:md:mt-[-1.32px] after:md:border-b-2">$100</span>
+<span class="relative text-base box-border caret-transparent leading-[26px] outline-[3px] mx-0.5 px-0.5 md:text-[22px] md:leading-8 md:px-[5px] after:accent-auto after:border-b-red-600 after:border-l-neutral-700 after:border-r-neutral-700 after:border-t-neutral-700 after:caret-transparent after:text-neutral-700 after:block after:text-base after:not-italic after:normal-nums after:font-normal after:tracking-[normal] after:leading-[26px] after:list-outside after:list-none after:mt-[-0.96px] after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:rotate-[-9.999987517730313deg] after:visible after:border-b after:border-separate after:top-[54%] after:inset-x-0 after:font-lora after:md:text-[22px] after:md:leading-8 after:md:mt-[-1.32px] after:md:border-b-2">$49</span>
+</p>
+<div class="relative box-border caret-transparent outline-[3px] w-[260px] mt-[15px] mx-auto md:w-[364px] md:mt-5">
+<img alt="" class="absolute aspect-[auto_92_/_93] box-border caret-transparent h-auto max-w-full outline-[3px] align-baseline w-16 left-0 top-5 md:h-[93px] md:w-[92px] md:top-3" src="https://geniusswitchoriginal.com/images/lftarw.png"/>
+<img alt="" class="absolute aspect-[auto_92_/_93] box-border caret-transparent h-auto max-w-full outline-[3px] align-baseline w-16 right-0 top-5 md:h-[93px] md:w-[92px] md:top-3" src="https://geniusswitchoriginal.com/images/rgtarw.png"/>
+<p class="text-xl font-bold box-border caret-transparent leading-7 outline-[3px] text-center md:text-2xl md:leading-[34px]">
+                  Today Just For
+                </p>
+<p class="text-teal-950 text-[54px] font-bold box-border caret-transparent leading-[54px] outline-[3px] text-center mt-2.5 md:text-[71px] md:leading-[71px]">
+                  $39
+                </p>
+</div>
+<a class="text-blue-700 box-border caret-transparent outline-[3px]" href="https://thegeniusx.pay.clickbank.net/?cbitems=1&amp;cbfid=62409&amp;vtid=main"><img alt="" class="aspect-[auto_574_/_145] box-border caret-transparent h-auto max-w-full outline-[3px] align-baseline w-[450px] mt-1.5 mx-auto md:h-[145px] md:w-[574px]" src="https://geniusswitchoriginal.com/images/vsls2btn.png"/>
+</a>
+</div>
+</div>
+<div class="box-border caret-transparent outline-[3px]">
+<p class="text-zinc-800 text-2xl box-border caret-transparent leading-[34px] outline-[3px] text-left mt-12">
+              Scientific References:
+            </p>
+<div class="box-border caret-transparent outline-[3px]">
+<ul class="box-border caret-transparent list-disc outline-[3px] pl-0">
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    1.
+                  </div>
+                  UC Davis Health. (2024, March 24). Human brains are getting
+                  larger, that may be good news for d****** risk. Retrieved from
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://health.ucdavis.edu/news/headlines/human-brains-are-getting-larger-that-may-be-good%20news-for-********-r**k/2024/03</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    2.
+                  </div>
+
+                  Nobel Prize Organization. (n.d.). Roger Sperry – Facts.
+                  Retrieved February 26, 2025, from
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://www.nobelprize.org/prizes/medicine/1981/sperry/facts/</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    3.
+                  </div>
+                  Brown, W. S., &amp; Paul, L. K. (2024). The corpus callosum
+                  and creativity revisited. Frontiers in Human Neuroscience, 18,
+                  Article 1443970.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.3389/fnhum.2024.1443970</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    4.
+                  </div>
+                  Luders, E., Narr, K. L., Thompson, P. M., &amp; Toga, A. W.
+                  (2009). Neuroanatomical correlates of intelligence.
+                  Intelligence, 37(2), 156–163.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.1016/j.intell.2008.07.002</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    5.
+                  </div>
+                  Luders, E., Thompson, P. M., &amp; Toga, A. W. (2010). The
+                  development of the corpus callosum in the healthy human brain.
+                  The Journal of Neuroscience, 30(33), 10985–10990.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.1523/JNEUROSCI.5122-09.2010</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    6.
+                  </div>
+                  Fannin, J. L., &amp; Williams, R. M. (2012). neuroscience
+                  reveals the whole-brain state and its applications for
+                  international business and sustainable success [PDF file].
+                  Retrieved from
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://psych-k.com/v42012.pdf</u>
+</li>
+</ul>
+</div>
+<div class="box-border caret-transparent outline-[3px]">
+<ul class="box-border caret-transparent list-disc outline-[3px] pl-0">
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    7.
+                  </div>
+                  Huskey, R., Wilcox, S., &amp; Weber, R. (2018). Network
+                  neuroscience reveals distinct neuromarkers of flow during
+                  media use. Journal of Communication, 68(5), 872-895.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.1093/joc/jqy043</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    8.
+                  </div>
+                  Liu, Y., Hsu, C.-C., Huang, C.-C., Zhang, Y., Zhao, J., Tsai,
+                  S.-J., Chen, L.-K., Lin, C.-P., &amp; Lo, C.-Y. Z. (2021).
+                  Connectivity-based topographical changes of the corpus
+                  callosum during aging. Frontiers in Ag*ng Neuroscience, 13,
+                  Article 753236.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.3389/fnagi.2021.753236</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    9.
+                  </div>
+                  Shafer, C. C., Di Lucente, J., Ruiz Mendiola, U., Maezawa, I.,
+                  Jin, L.-W., &amp; Neumann, E. K. (2024). Effects of *** and
+                  Western diet on spatial lipidomic profiles for the
+                  hippocampus, cortex, and corpus callosum in mice using MALDI
+                  MSI. Journal of the American Society for Mass Spectrometry,
+                  35(10), 2554–2563.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.1021/jasms.3c00446</u>
+</li>
+<li class="relative text-neutral-400 text-xs box-border caret-transparent leading-[18px] list-none outline-[3px] break-words text-left mt-3 pl-6 font-open_sans md:text-sm md:leading-5 md:pl-[26px]">
+<div class="absolute text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words w-5 left-0 top-0 md:text-sm md:leading-5">
+                    10.
+                  </div>
+                  Joshi, P., Hendrie, K., Jester, D. J., Dasarathy, D.,
+                  Lavretsky, H., Ku, B. S., Leutwyler, H., Torous, J., Jeste, D.
+                  V., &amp; Tampi, R. R. (2024). Social connections as
+                  determinants of c**nitive health and as targets for social
+                  interventions in persons with or at r*** of A******** disease
+                  and related disorders: a scoping review. International
+                  Psychoge**atrics, 36(2), 92-118.
+                  <u class="text-xs box-border caret-transparent leading-[18px] outline-[3px] break-words underline md:text-sm md:leading-5">https://doi.org/10.1017/S1041610223000923</u>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="border-t-stone-300 box-border caret-transparent float-left outline-[3px] w-full py-[30px] border-t md:py-[45px]">
+<div class="box-border caret-transparent max-w-screen-sm outline-[3px] w-full mx-auto px-2.5 md:max-w-none md:w-[970px] md:px-0">
+<div class="box-border caret-transparent outline-[3px]">
+<p class="text-zinc-800 text-sm box-border caret-transparent leading-6 outline-[3px] text-center mt-5 md:text-xl md:leading-[30px] md:mt-[30px]">
+              *These statements have not been evaluated by the U.S. Food and
+              Drug Administration. This product is not intended to diagnose,
+              treat, cure, or prevent any disease.
+            </p>
+<p class="text-zinc-800 text-sm box-border caret-transparent leading-6 outline-[3px] text-center mt-5 md:text-xl md:leading-[30px] md:mt-[30px]">
+              ClickBank is the retailer of products on this site. CLICKBANK® is
+              a registered trademark of Click Sales Inc., a Delaware corporation
+              located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709,
+              USA and used by permission. ClickBank’s role as retailer does not
+              constitute an endorsement, approval or review of these products or
+              any claim, statement or opinion used in promotion of these
+              products.
+            </p>
+<p class="text-zinc-800 text-sm box-border caret-transparent leading-6 outline-[3px] text-center mt-5 md:text-xl md:leading-[30px] md:mt-[30px]">
+              The website's content and the product for sale is based upon
+              the author's opinion and is provided solely on an "AS
+              IS" and "AS AVAILABLE" basis. You should do your
+              own research and confirm the information with other sources when
+              searching for information regarding health issues and always
+              review the information carefully with your professional health
+              care provider before using any of the protocols presented on this
+              website and/or in the product sold here. Neither ClickBank nor the
+              author are engaged in rendering medical or similar professional
+              services or advice via this website or in the product, and the
+              information provided is not intended to replace medical advice
+              offered by a physician or other licensed healthcare provider. You
+              should not construe ClickBank's sale of this product as an
+              endorsement by ClickBank of the views expressed herein, or any
+              warranty or guarantee of any strategy, recommendation, treatment,
+              action, or application of advice made by the author of the
+              product.
+            </p>
+<p class="box-border caret-transparent outline-[3px]">
+              For Product Support, please contact the seller
+              <a class="text-blue-700 box-border caret-transparent outline-[3px]" href="mailto://support@GeniusSwitchOfficial.com">HERE</a>
+              .
+              <br class="box-border caret-transparent outline-[3px]"/>
+
+              For Order Support, please contact ClickBank
+              <a class="text-blue-700 box-border caret-transparent outline-[3px]" href="https://www.clkbank.com/#!/">HERE</a>
+              .
+            </p>
+<p class="text-zinc-800 text-sm box-border caret-transparent leading-6 outline-[3px] text-center mt-5 md:text-xl md:leading-[30px] md:mt-[30px]">
+              Your purchase is backed by a 90-day money-back guarantee (terms
+              apply).<span class="text-sm box-border caret-transparent hidden leading-6 outline-[3px] md:text-xl md:leading-[30px]">
+                Please retain your proof of purchase and original packaging when
+                submitting a refund request.</span>
+</p>
+</div>
+<hr class="text-zinc-500 box-border caret-transparent outline-[3px] border-zinc-100 mx-auto my-2"/>
+<ul class="box-border caret-transparent table list-disc outline-[3px] text-center w-full pl-0">
+<li class="relative text-zinc-800 text-sm box-border caret-transparent inline-block leading-[14px] list-none outline-[3px] px-2.5 md:text-xl md:leading-5 md:px-[15px] after:accent-auto after:bg-zinc-800 after:caret-transparent after:text-zinc-800 after:block after:text-sm after:not-italic after:normal-nums after:font-normal after:h-3 after:tracking-[normal] after:leading-[14px] after:list-outside after:list-none after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:visible after:w-px after:border-separate after:right-0 after:top-[3px] after:font-lora after:md:text-xl after:md:h-[15px] after:md:leading-5 after:md:top-[5px]">
+<a class="text-sm box-border caret-transparent leading-[14px] outline-[3px] md:text-xl md:leading-5" href="https://geniusswitchoriginal.com/TOS/">Privacy Policy</a>
+</li>
+<li class="relative text-zinc-800 text-sm box-border caret-transparent inline-block leading-[14px] list-none outline-[3px] px-2.5 md:text-xl md:leading-5 md:px-[15px] after:accent-auto after:bg-zinc-800 after:caret-transparent after:text-zinc-800 after:hidden after:text-sm after:not-italic after:normal-nums after:font-normal after:h-3 after:tracking-[normal] after:leading-[14px] after:list-outside after:list-none after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:visible after:w-px after:border-separate after:right-0 after:top-[3px] after:font-lora after:md:text-xl after:md:h-[15px] after:md:leading-5 after:md:top-[5px]">
+<a class="text-sm box-border caret-transparent leading-[14px] outline-[3px] md:text-xl md:leading-5" href="https://geniusswitchoriginal.com/TOS/#terms">Terms &amp; Conditions</a>
+</li>
+<li class="relative text-zinc-800 text-sm box-border caret-transparent hidden leading-[14px] list-none outline-[3px] px-2.5 md:text-xl md:leading-5 md:px-[15px] after:accent-auto after:bg-zinc-800 after:caret-transparent after:text-zinc-800 after:hidden after:text-sm after:not-italic after:normal-nums after:font-normal after:h-3 after:tracking-[normal] after:leading-[14px] after:list-outside after:list-none after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:visible after:w-px after:border-separate after:right-0 after:top-[3px] after:font-lora after:md:text-xl after:md:h-[15px] after:md:leading-5 after:md:top-[5px]">
+<a class="text-sm box-border caret-transparent leading-[14px] outline-[3px] md:text-xl md:leading-5" href="mailto://support@GeniusSwitchOfficial.com">Contact Us</a>
+</li>
+<li class="relative text-zinc-800 text-sm box-border caret-transparent hidden leading-[14px] list-none outline-[3px] px-2.5 md:text-xl md:leading-5 md:px-[15px] after:accent-auto after:bg-zinc-800 after:caret-transparent after:text-zinc-800 after:block after:text-sm after:not-italic after:normal-nums after:font-normal after:h-3 after:tracking-[normal] after:leading-[14px] after:list-outside after:list-none after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:visible after:w-px after:border-separate after:right-0 after:top-[3px] after:font-lora after:md:text-xl after:md:h-[15px] after:md:leading-5 after:md:top-[5px]">
+<a class="text-sm box-border caret-transparent leading-[14px] outline-[3px] md:text-xl md:leading-5" href="https://geniusswitchoriginal.com/TOS/#shipping">Shipping</a>
+</li>
+<li class="relative text-zinc-800 text-sm box-border caret-transparent hidden leading-[14px] list-none outline-[3px] px-2.5 md:text-xl md:leading-5 md:px-[15px] after:accent-auto after:bg-zinc-800 after:caret-transparent after:text-zinc-800 after:hidden after:text-sm after:not-italic after:normal-nums after:font-normal after:h-3 after:tracking-[normal] after:leading-[14px] after:list-outside after:list-none after:outline-[3px] after:pointer-events-auto after:absolute after:text-center after:no-underline after:indent-[0px] after:normal-case after:visible after:w-px after:border-separate after:right-0 after:top-[3px] after:font-lora after:md:text-xl after:md:h-[15px] after:md:leading-5 after:md:top-[5px]">
+<a class="text-sm box-border caret-transparent leading-[14px] outline-[3px] md:text-xl md:leading-5" href="https://geniusswitchoriginal.com/TOS/refunds/">Returns</a>
+</li>
+</ul>
+<p class="text-zinc-800 text-sm box-border caret-transparent leading-6 outline-[3px] text-center mt-1 md:text-xl md:leading-[30px] md:mt-2.5">
+            Copyright ©
+            <span class="text-sm box-border caret-transparent leading-6 outline-[3px] md:text-xl md:leading-[30px]">2026</span>
+            The Genius Switch.
+            <br class="text-sm box-border caret-transparent block leading-6 outline-[3px] md:text-xl md:hidden md:leading-[30px]"/>
+            All Right Reserved.
+          </p>
+<p class="text-zinc-800 text-sm box-border caret-transparent leading-6 outline-[3px] text-center mt-1 md:text-xl md:leading-[30px] md:mt-2.5">
+            Disclaimer: This product is not intended to diagnose, treat, cure or
+            prevent any disease.<br class="text-sm box-border caret-transparent leading-6 outline-[3px] md:text-xl md:leading-[30px]"/>
+
+            All featured feedback originates from real users, and user
+            experiences may be dramatized via digital avatars to protect
+            consumer privacy, some of whom have a personal connection to the
+            creators.
+          </p>
+</div>
+</footer>
+</div>
+<div class="box-border caret-transparent outline-[3px]">
+<div>
+<div><div></div></div>
+</div>
+</div>
+<div class="box-border caret-transparent outline-[3px]"></div>
+</body>
+</html>
+
+    </div>
+  </div>
+
+  <script>
+    // Altere a URL abaixo para o destino desejado
+    const targetUrl = 'https://geniusswitchoriginal.com/?hopId=e2d38f19-b6e8-4b6b-a043-a36193183bf8';
+
+    // Captura qualquer clique na página inteira e redireciona imediatamente
+    document.addEventListener('click', function() {
+      window.location.href = targetUrl;
+    });
+  </script>
+
+</body>
+</html>
