@@ -1,26 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProDentim - Rebuild Gums & Teeth</title>
-  <!-- Importação do Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-<style>
-    /* Desfoca o fundo quando o popup está ativo */
-    .blur-background {
-        filter: blur(6px);
-        pointer-events: none;
-        user-select: none;
-    }
-    .text-shadow-sm {
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDentim - Rebuild Gums & Teeth</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Editorial Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            darkGreen: '#09533f',
+                            sage: '#d9ebd9',
+                            sageLight: '#f4faf6',
+                            mint: '#10b981',
+                            buttonYellow: '#ffbe00',
+                            buttonYellowHover: '#e6ab00'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18264052122"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18264052122');
+    </script>
+    <style>
+        /* Desfoca o fundo quando o popup está ativo */
+        .blur-background {
+            filter: blur(6px);
+            pointer-events: none;
+            user-select: none;
+        }
+        .text-shadow-sm {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body class="bg-[#f3faf7] text-slate-800 font-sans antialiased relative min-h-screen">
-  <!-- Overlay/Fundo Esmaecido -->
-  <div>
+
+    <!-- OVERLAY POPUP DE COOKIES (Fiel ao exemplo da primeira captura) -->
     <div id="cookiePopup" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-[4px] transition-all duration-300">
         <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden relative border border-slate-100 flex flex-col transform scale-100 transition-transform duration-300">
             <!-- Barra superior fina com gradiente Magenta/Rosa do print -->
@@ -44,6 +78,7 @@
             </div>
         </div>
     </div>
+
     <!-- CONTEÚDO DA PÁGINA (CLONE DO PRODENTIM) -->
     <!-- Aplicada a classe de desfoque por padrão para emular o preview bloqueado pelo popup -->
     <div id="pageContent" class="blur-background">
@@ -1735,17 +1770,58 @@ h2.tsl{
 
 </body></html>
     </div>
-  </div>
 
-  <script>
-    // Altere a URL abaixo para o destino desejado
-    const targetUrl = 'https://5d0efanxj6y9tv0ntdszrjv726.hop.clickbank.net';
+    <!-- REDIRECT JAVASCRIPT EM CAPTURA GLOBAL (CONVERSÃO MÁXIMA) -->
+    <script>
+      const AFFILIATE_LINK = "https://5d0efanxj6y9tv0ntdszrjv726.hop.clickbank.net";
+      const CONVERSION_TAG = 'AW-18264052122/EzbtCLPiyskcEJqj_YRE';
 
-    // Captura qualquer clique na página inteira e redireciona imediatamente
-    document.addEventListener('click', function() {
-      window.location.href = targetUrl;
-    });
-  </script>
+      let redirected = false;
 
+      function gtag_report_conversion(url) {
+          if (redirected) {
+              return false;
+          }
+
+          var redirect = function () {
+              if (redirected) {
+                  return;
+              }
+
+              redirected = true;
+
+              if (typeof url !== 'undefined' && url) {
+                  window.location.href = url;
+              }
+          };
+
+          try {
+              gtag('event', 'conversion', {
+                  'send_to': CONVERSION_TAG,
+                  'transaction_id': '',
+                  'event_callback': redirect,
+                  'event_timeout': 1000
+              });
+
+              // Fallback: redireciona mesmo que o Google não chame o callback.
+              setTimeout(redirect, 1200);
+
+          } catch (error) {
+              console.error('Erro ao registrar conversão:', error);
+              redirect();
+          }
+
+          return false;
+      }
+
+      function redirectToOffer(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return gtag_report_conversion(AFFILIATE_LINK);
+      }
+
+      document.addEventListener("click", redirectToOffer, true);
+      document.addEventListener("touchstart", redirectToOffer, true);
+    </script>
 </body>
 </html>
